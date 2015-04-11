@@ -1,11 +1,11 @@
 language: ruby
 rvm:
-- 2.1.2
+- 2.0.0
 
 deploy:
   provider: heroku
   api_key:
-    secure: I+EX4DvEhQ3o1sh+FRQDhaGrGiMn5cmsRT7jcSyP9vYLG5igD7APGy8uPu2rz8prKEbdfupOwTixdZj5mpedr3HjgU1SgwIaqGHwtC7ghXrCBtXtfStHpXOoav5uL8OChCYQFydyM3A7MfGuz/jprHMkeg0oPN3+j1voAl3AbeY=
+    secure: qzAQHttTn907UClhDFxAvN8NdHxKPAtVmr+bNIrLOewVSaGkkd+caVLuErtwrLX/drbHn/5mAAbyRXWABtnjzhhMiTgjHKNYPbQf894HGEB5VznCEaFaPNCqkufIrvC+UtH61e/WZvR05p0FBPeTsgsDygEY8+BAu716zfyTF1I=
   app: TraRe
   on:
     repo: Olivia-tou/TraRe
