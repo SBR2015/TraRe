@@ -1,12 +1,19 @@
 language: ruby
 rvm:
 - 2.1.2
-
+- 1.9.3
+- jruby-19mode
+- rbx-2
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
-
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
 deploy:
   provider: heroku
+  api_key:
+    secure: I+EX4DvEhQ3o1sh+FRQDhaGrGiMn5cmsRT7jcSyP9vYLG5igD7APGy8uPu2rz8prKEbdfupOwTixdZj5mpedr3HjgU1SgwIaqGHwtC7ghXrCBtXtfStHpXOoav5uL8OChCYQFydyM3A7MfGuz/jprHMkeg0oPN3+j1voAl3AbeY=
+  app: TraRe
+  on:
+    repo: Olivia-tou/TraRe
+    branch: olivia_branch
