@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-- 2.0.0
+- 2.1.2
 
 deploy:
   provider: heroku
   api_key:
-    secure: qzAQHttTn907UClhDFxAvN8NdHxKPAtVmr+bNIrLOewVSaGkkd+caVLuErtwrLX/drbHn/5mAAbyRXWABtnjzhhMiTgjHKNYPbQf894HGEB5VznCEaFaPNCqkufIrvC+UtH61e/WZvR05p0FBPeTsgsDygEY8+BAu716zfyTF1I=
-  app: TraRe
+    secure: t7v9tm5L5I25su0lmMmHi6QcE99TxW1uBJbzLC5u8418WZ9YalNm4KvKHwl+IZ4GxPg69UBc8+u6HNOIAi6rXHg0Jrx+o+5v39hsq/Oq09iGrEkm1ExBJQ6OsHl3GzZNFvtc3iXMmuLpgFTN9da+jq7J1DfiyIeEL687aQ4eRqA=
+  app: quiet-fjord-9888
   on:
     repo: Olivia-tou/TraRe
     branch: olivia_branch
