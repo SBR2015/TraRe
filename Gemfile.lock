@@ -38,6 +38,11 @@ GEM
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     rake (10.3.2)
     ref (1.0.5)
     sinatra (1.4.6)
@@ -68,6 +73,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rails_12factor
   rake
   sinatra
   therubyracer
