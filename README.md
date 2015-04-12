@@ -7,11 +7,11 @@
 
 Team members
 ---------------
+[shinjukujohnny](https://github.com/shinjukujohnny):吉川久文
+
 [pyar6329](https://github.com/pyar6329):有馬司
 
 [Yusuke Ohashi](https://github.com/yuchan):大橋佑亮
-
-[shinjukujohnny](https://github.com/shinjukujohnny):吉川久文
 
 [a1447ll](https://github.com/a1447ll):LINH LEBAO
 
