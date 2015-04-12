@@ -35,6 +35,7 @@ GEM
     pusher-client (0.6.0)
       json
       websocket (~> 1.0)
+    rake (10.3.2)
     ref (1.0.5)
     slop (3.6.0)
     therubyracer (0.12.2)
@@ -59,5 +60,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   therubyracer
   travis
