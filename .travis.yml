@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-- 2.1.2
+- 2.1.3
 
 deploy:
   provider: heroku
   api_key:
-    secure: t7v9tm5L5I25su0lmMmHi6QcE99TxW1uBJbzLC5u8418WZ9YalNm4KvKHwl+IZ4GxPg69UBc8+u6HNOIAi6rXHg0Jrx+o+5v39hsq/Oq09iGrEkm1ExBJQ6OsHl3GzZNFvtc3iXMmuLpgFTN9da+jq7J1DfiyIeEL687aQ4eRqA=
-  app: quiet-fjord-9888
+    secure: nYF3j2ihy6CKYnPgzW/6Dniu2kqX+/J7XTFXkyA6EmPNHTNKbJ/kU6+qdZ2AqqBFlpTkopCpsJ5+K58g38EG2vq9sCzKpsmv9i+mhixIq+K3Sqk45DWaSN4EWl+oRQKPM8K0xp69yRrjHE6u+2yUFa1nZNdeW4CxlMyNgCbSbt4=
+  app: tranquil-hollows-4999
   on:
     repo: Olivia-tou/TraRe
     branch: olivia_branch

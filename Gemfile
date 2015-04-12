@@ -10,4 +10,3 @@ gem 'rake'
 gem 'therubyracer',  platforms: :ruby
 
 gem 'travis'
-
