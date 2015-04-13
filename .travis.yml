@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.1.3
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: nYF3j2ihy6CKYnPgzW/6Dniu2kqX+/J7XTFXkyA6EmPNHTNKbJ/kU6+qdZ2AqqBFlpTkopCpsJ5+K58g38EG2vq9sCzKpsmv9i+mhixIq+K3Sqk45DWaSN4EWl+oRQKPM8K0xp69yRrjHE6u+2yUFa1nZNdeW4CxlMyNgCbSbt4=
+  app: tranquil-hollows-4999
+  on:
+    repo: Olivia-tou/TraRe
+    branch: olivia_branch
