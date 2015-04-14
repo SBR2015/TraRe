@@ -4,4 +4,14 @@ class MyController < ApplicationController
 
   def index
   end
+
+  def info
+    @user_data = {
+      username: current_user.username,
+      email: current_user.email
+    }
+
+    render json: @user_data
+  end
+
 end
