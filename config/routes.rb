@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'my/index'
+
   #get 'top/index'
   root 'top#index'
 
