@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'my/index'
 
-  #get 'top/index'
   root 'top#index'
+
+
+  # get 'my/index'
+  match '/my', to: 'my#index', via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
