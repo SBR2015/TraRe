@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # error if username isn't unique words
+  # error if below contents isn't unique words
   validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end

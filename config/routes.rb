@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
-
   # get 'my/index'
-  match '/my', to: 'my#index', via: 'get'
+  match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
