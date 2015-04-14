@@ -13,7 +13,7 @@ Team members
 
 [pyar6329](https://github.com/pyar6329):有馬司
 
-[a1447ll](https://github.com/a1447ll):LINH LEBAO
+[a1447ll](https://github.com/a1447ll):LE BAO LINH
 
 [Olivia-tou](https://github.com/Olivia-tou):佟必超
 
