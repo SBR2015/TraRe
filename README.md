@@ -1,5 +1,7 @@
 # TraRe
 
+[![Build Status](https://travis-ci.org/Olivia-tou/TraRe.svg?branch=master)](https://travis-ci.org/Olivia-tou/TraRe)
+
 先生
 ---------------
 - I am ychubachi.
