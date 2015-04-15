@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring'
+gem 'spring',       group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -33,7 +33,7 @@ gem 'spring'
 group :development, :test do
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+#  gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -54,23 +54,24 @@ group :development, :test do
 
 end
 
-group :development do
+#group :development do
   # Use travis CI command
   gem 'travis'
 
   # JavaScript Interpreter
   gem 'therubyracer', platforms: :ruby
 
-end
+#end
 
 # heroku settings
-group :production do
-  gem 'rails_12factor'
-  gem 'pg'
+#group :production do
+  gem 'rails_12factor',    group: :production
+  ruby '2.1.3'
+#  gem 'pg'
   gem 'unicorn'
 #  gem 'newrelic_rpm'
 
-end
+#end
 
 # Use http Clients
 gem 'httpclient'
