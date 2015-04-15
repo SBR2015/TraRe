@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-gem 'pg'
+#gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,24 +54,24 @@ group :development, :test do
 
 end
 
-#group :development do
+ group :development do
   # Use travis CI command
   gem 'travis'
 
   # JavaScript Interpreter
   gem 'therubyracer', platforms: :ruby
 
-#end
+end
 
 # heroku settings
-#group :production do
+group :production do
   gem 'rails_12factor',    group: :production
   ruby '2.1.3'
-#  gem 'pg'
+  gem 'pg'
   gem 'unicorn'
 #  gem 'newrelic_rpm'
 
-#end
+end
 
 # Use http Clients
 gem 'httpclient'
