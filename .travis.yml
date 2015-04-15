@@ -12,7 +12,7 @@ before_install:
 script:
   - bundle exec rake db:drop db:create db:migrate
   - bundle exec rspec spec
-  - bundle exec travis setup heroku
+  - bundle exec travis setup heroku  --skip-version-check
 
 deploy:
   provider: heroku
