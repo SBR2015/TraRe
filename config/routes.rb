@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   devise_for :users
-
-=======
-  get 'top/index'
-
-  #get 'top/index'
->>>>>>> master
   root 'top#index'
 
   # get 'my/index'
