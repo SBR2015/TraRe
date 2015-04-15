@@ -22,5 +22,5 @@ deploy:
   on:
     repo: Olivia-tou/TraRe
     branch: tou
-#  run:
- #   - "rake db:migrate"
+  run:
+    - "rake db:migrate"
