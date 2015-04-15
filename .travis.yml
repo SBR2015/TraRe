@@ -17,7 +17,6 @@ before_script:
 script:
   - bundle exec rake db:drop db:create db:migrate
   - bundle exec rspec spec
-#  - bundle exec travis setup heroku 
 
 deploy:
   provider: heroku
@@ -26,6 +25,6 @@ deploy:
   app: tranquil-hollows-4999
   on:
     repo: Olivia-tou/TraRe
-    branch: tou
+
   run:
     - "rake db:migrate"
