@@ -16,7 +16,7 @@ script:
 
 deploy:
   provider: heroku
-  api_key: d2e20278-8dee-46f1-8eb1-4ee708916afe
+  api_key: #d2e20278-8dee-46f1-8eb1-4ee708916afe
     secure: nYF3j2ihy6CKYnPgzW/6Dniu2kqX+/J7XTFXkyA6EmPNHTNKbJ/kU6+qdZ2AqqBFlpTkopCpsJ5+K58g38EG2vq9sCzKpsmv9i+mhixIq+K3Sqk45DWaSN4EWl+oRQKPM8K0xp69yRrjHE6u+2yUFa1nZNdeW4CxlMyNgCbSbt4=
   app: tranquil-hollows-4999
   on:
