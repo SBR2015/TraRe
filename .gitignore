@@ -37,7 +37,7 @@ config/initializers/secret_token.rb
 .rvmrc
 
 # rbenv ignore files
-.ruby-version
+# .ruby-version
 
 # if using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/components

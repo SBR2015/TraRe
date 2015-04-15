@@ -66,12 +66,10 @@ end
 
 # heroku settings
 group :production do
-  gem 'rails_12factor',    group: :production
-  ruby '2.1.3'
+  gem 'rails_12factor'
   gem 'pg'
   gem 'unicorn'
 #  gem 'newrelic_rpm'
-
 end
 
 # Use http Clients
