@@ -1,14 +1,12 @@
 class CreateLanguages < ActiveRecord::Migration
   def change
     create_table :languages do |t|
-      t.integer :language_id, null: false
-      t.string :language, null: false
+      t.string :code, null: false, limit: 2
 
       t.timestamps null: false
     end
 
-    add_index :languages, :language_id, unique: true
-    add_index :languages, :language, unique: true
+    add_index :languages, :code, unique: true
 
   end
 end
