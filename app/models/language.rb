@@ -12,9 +12,4 @@ class Language < ActiveRecord::Base
            class_name: 'Resume',
            foreign_key: 'language_id'
 
-  has_many :wishlists, dependent: :destroy
-  has_many :wanted_resumes,
-           through: :wishlists
-
-
 end

@@ -18,11 +18,9 @@ languages.each do |row|
   lang1.save!
 end
 
-
 # resume1 = Resume.new
 # resume1.sentence = "こんちはー"
 # resume1.owner_id = 1
 # resume1.translator_id = 1
 # resume1.language_id = 2
-# resume1.wanted_language_id = 1
 # resume1.save!
