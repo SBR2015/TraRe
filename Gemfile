@@ -62,6 +62,16 @@ end
   # JavaScript Interpreter
   gem 'therubyracer', platforms: :ruby
 
+  # Debugger
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'hirb'
+  gem 'hirb-unicode'
+
 end
 
 # heroku settings
