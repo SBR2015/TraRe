@@ -1,12 +1,5 @@
 class Resume < ActiveRecord::Base
   # model relationship
-  belongs_to :written_language,
-             class_name: 'Language',
-             foreign_key: 'language_id'
-
-  belongs_to :wanted_language,
-             class_name: 'Language',
-             foreign_key: 'wanted_language_id'
 
   belongs_to :owner,
              class_name: 'User',
@@ -15,5 +8,15 @@ class Resume < ActiveRecord::Base
   belongs_to :translator,
              class_name: 'User',
              foreign_key: 'translator_id'
+
+  belongs_to :written_language,
+             class_name: 'Language',
+             foreign_key: 'language_id'
+
+
+  has_many :wishlists, dependent: :destroy
+  has_many :wanted_languages,
+           through: :wishlists
+
 
 end

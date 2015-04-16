@@ -8,12 +8,13 @@ class Language < ActiveRecord::Base
            class_name: 'User',
            foreign_key: 'best_language_id'
 
-  has_many :written_resumes,
+  has_many :resumes,
            class_name: 'Resume',
            foreign_key: 'language_id'
 
+  has_many :wishlists, dependent: :destroy
   has_many :wanted_resumes,
-           class_name: 'Resume',
-           foreign_key: 'wanted_language_id'
+           through: :wishlists
+
 
 end

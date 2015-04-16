@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
              class_name: 'Language',
              foreign_key: 'best_language_id'
 
-  has_many :my_resumes,
+  has_many :resumes,
            class_name: 'Resume',
            foreign_key: 'owner_id'
 
