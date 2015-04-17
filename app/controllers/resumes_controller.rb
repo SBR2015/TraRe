@@ -1,3 +1,4 @@
+#curd?
 class ResumesController < ApplicationController
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
