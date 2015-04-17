@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416154117) do
+ActiveRecord::Schema.define(version: 20150416113215) do
 
   create_table "languages", force: :cascade do |t|
     t.string   "code",       limit: 2, null: false
@@ -59,15 +59,5 @@ ActiveRecord::Schema.define(version: 20150416154117) do
   add_index "users", ["native_language_id"], name: "index_users_on_native_language_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
-
-  create_table "wishlists", force: :cascade do |t|
-    t.integer  "resume_id"
-    t.integer  "language_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "wishlists", ["language_id"], name: "index_wishlists_on_language_id"
-  add_index "wishlists", ["resume_id"], name: "index_wishlists_on_resume_id"
 
 end
