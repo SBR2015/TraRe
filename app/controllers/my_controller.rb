@@ -3,8 +3,6 @@ class MyController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @resume = Resume.all
-    render :json => @resume.to_json
   end
 
   def info
@@ -16,9 +14,9 @@ class MyController < ApplicationController
     render json: @user_data
   end
 
- # def resume
-  #  @resume = Resume.all
-   # render :json => @resume.to_json
- # end
+  def resume
+    @resume = Resume.all
+    render :json => @resume.to_json
+  end
 
 end
