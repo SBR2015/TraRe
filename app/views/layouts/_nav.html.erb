@@ -1,14 +1,26 @@
 <nav>
+  <div id = "language" class = "header">
+    <ul>
+      <li><a href>English</a></li>
+      <li><a href>日本語 </a></li>
+    </ul>
+  </div>
+
   <% if user_signed_in? %>
-    <p>Logged in as <strong><%= current_user.email %></strong>.</p>
-    <%= link_to 'Profile editting', edit_user_registration_path %> |
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <div id = "username" class = "header">
+      Welcome, <%= current_user.email %> |
+      <%= link_to 'Profile editting', edit_user_registration_path %> |
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    </div><!--header-->
   <% else %>
     <%= link_to 'Sign up', new_user_registration_path %> |
     <%= link_to 'Log in', new_user_session_path %>
-
   <% end %>
 
+  <div class = "banner">
+    <div id = "trare">TraRe</div>
+    <div id = "subtitle">Translating Resume Service</div>
+  </div><!--banner-->
 </nav>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
