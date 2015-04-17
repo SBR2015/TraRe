@@ -1,4 +1,23 @@
 class User < ActiveRecord::Base
+
+  # model relationship
+  belongs_to :native_language,
+             class_name: 'Language',
+             foreign_key: 'native_language_id'
+
+  belongs_to :best_language,
+             class_name: 'Language',
+             foreign_key: 'best_language_id'
+
+  has_many :resumes,
+           class_name: 'Resume',
+           foreign_key: 'owner_id'
+
+  has_many :translated_resumes,
+           class_name: 'Resume',
+           foreign_key: 'translator_id'
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,0 +1,8 @@
+class AddIndexToResumes < ActiveRecord::Migration
+  def change
+    change_table :resumes do |t|
+      t.index :owner_id
+      t.index :translator_id
+    end
+  end
+end

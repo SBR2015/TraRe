@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414125957) do
+ActiveRecord::Schema.define(version: 20150416154117) do
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "code",       limit: 2, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "languages", ["code"], name: "index_languages_on_code", unique: true
+
+  create_table "resumes", force: :cascade do |t|
+    t.string   "sentence",       default: "",    null: false
+    t.boolean  "is_translation", default: false, null: false
+    t.integer  "owner_id",                       null: false
+    t.integer  "translator_id",                  null: false
+    t.integer  "language_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "resumes", ["language_id"], name: "index_resumes_on_language_id"
+  add_index "resumes", ["owner_id"], name: "index_resumes_on_owner_id"
+  add_index "resumes", ["translator_id"], name: "index_resumes_on_translator_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,10 +49,25 @@ ActiveRecord::Schema.define(version: 20150414125957) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "username",               default: "", null: false
+    t.string   "realname",               default: "", null: false
+    t.integer  "native_language_id"
+    t.integer  "best_language_id"
   end
 
+  add_index "users", ["best_language_id"], name: "index_users_on_best_language_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["native_language_id"], name: "index_users_on_native_language_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer  "resume_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "wishlists", ["language_id"], name: "index_wishlists_on_language_id"
+  add_index "wishlists", ["resume_id"], name: "index_wishlists_on_resume_id"
 
 end
