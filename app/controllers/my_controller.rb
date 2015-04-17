@@ -14,9 +14,9 @@ class MyController < ApplicationController
     render json: @user_data
   end
 
-#  def try_resume
- #   @resume = Resume.all
-  #  render :json => @resume.to_json
+ # def try_resume
+  #  @resume = Resume.all
+   # render :json => @resume.to_json
  # end
 
 end
