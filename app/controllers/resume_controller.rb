@@ -1,5 +1,5 @@
 class ResumeController < ApplicationController
-  def resume
+  def index
     @resume = Resume.all
     render :json => @resume.to_json
   end
