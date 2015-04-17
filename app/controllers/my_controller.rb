@@ -17,4 +17,6 @@ class MyController < ApplicationController
   def try_resume
     @resume = Resume.all
     render :json => @resume.to_json
+  end
+
 end
