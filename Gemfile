@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -62,12 +62,21 @@ end
   # JavaScript Interpreter
   gem 'therubyracer', platforms: :ruby
 
+  # Debugger
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'hirb'
+  gem 'hirb-unicode'
+
 end
 
 # heroku settings
 group :production do
   gem 'rails_12factor',    group: :production
-  ruby '2.1.3'
   gem 'pg'
   gem 'unicorn'
 #  gem 'newrelic_rpm'
