@@ -20,6 +20,6 @@ deploy:
   app: tranquil-hollows-4999
   on:
     repo: Olivia-tou/TraRe
-
+    branch: tou
   run:
     - "rake db:migrate"
