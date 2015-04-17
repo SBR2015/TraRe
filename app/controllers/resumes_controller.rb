@@ -32,7 +32,7 @@ class ResumesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @resume.update(design_params)
+      if @resume.update(resume_params)
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume }
       else
@@ -46,7 +46,7 @@ class ResumesController < ApplicationController
   def destroy
     @resume.destroy
     respond_to do |format|
-      format.html { redirect_to designs_url, notice: 'Resume was successfully destroyed.' }
+      format.html { redirect_to resumes_url, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
