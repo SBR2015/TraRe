@@ -6,8 +6,7 @@
 
 body {
 	margin-right: 20px;
-	background: lightblue;
-}
+	background: lightblue;}
 
 ul {
 	padding: 0;
@@ -59,7 +58,9 @@ ul {
 }
 
 .footer {
+	height: 50px;
 	bottom: 0;
+	position: static;
 	text-align: center;
 }
 
@@ -90,6 +91,10 @@ ul {
 	background: white;
 }
 
+.main .content {
+	padding: 20px;
+}
+
 #myResume .content {
 	padding: 20px;
 }
@@ -107,9 +112,8 @@ ul {
 	margin-top: 10px;
 }
 
-.lang {
+.langTitle {
 	padding: 5px 5px 5px 0px;
-	width: 150px;
 	color: dimgrey;
 	font-size: 1.25em;
 	font-weight: bold;
@@ -142,5 +146,13 @@ ul {
 	border-bottom: solid steelblue 1px;
 }
 
+#resume {
+	padding-bottom: 10px;
+	border-bottom: double steelblue 3px;
+}
 
+#translations li {
+	padding: 10px;
+	border-bottom: solid steelblue 1px;
+}
 
