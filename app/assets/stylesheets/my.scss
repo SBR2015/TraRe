@@ -6,8 +6,7 @@
 
 body {
 	margin-right: 20px;
-	background: lightblue;
-}
+	background: lightblue;}
 
 ul {
 	padding: 0;
@@ -45,7 +44,7 @@ ul {
 }
 
 .leftMenu {
-	width : 240px;
+	width: 270px;
 	float: left;
 }
 
@@ -59,17 +58,18 @@ ul {
 }
 
 .footer {
+	height: 50px;
 	bottom: 0;
 	text-align: center;
 }
 
-.footer li {
+#bottomNavigation li {
 	display: inline;
 }
 
 .main {
-	margin-left: 250px;
-	margin-right: 320px;
+	margin-left: 280px;
+	margin-right: 310px;
 }
 
 .title {
@@ -90,6 +90,10 @@ ul {
 	background: white;
 }
 
+.main .content {
+	padding: 20px;
+}
+
 #myResume .content {
 	padding: 20px;
 }
@@ -107,9 +111,8 @@ ul {
 	margin-top: 10px;
 }
 
-.lang {
+.langTitle {
 	padding: 5px 5px 5px 0px;
-	width: 150px;
 	color: dimgrey;
 	font-size: 1.25em;
 	font-weight: bold;
@@ -125,7 +128,7 @@ ul {
 
 .rightMenu .content li {
 	margin: 20px;
-	padding: 10px 5px;
+	padding: 5px 5px;
 	border-bottom: solid steelblue 1px;
 }
 
@@ -142,5 +145,19 @@ ul {
 	border-bottom: solid steelblue 1px;
 }
 
+#resume {
+	padding-bottom: 10px;
+	border-bottom: double steelblue 3px;
+}
 
+#translations li {
+	padding: 10px;
+	border-bottom: solid steelblue 1px;
+}
 
+.rightMenu .title {
+	font-size: 1.25em;
+	text-align: center;
+	border-top-right-radius: 0.5em;
+	border-top-left-radius: 0.5em; 
+}
