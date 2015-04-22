@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :languages
   resources :resumes
   devise_for :users
 
