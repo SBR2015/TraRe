@@ -72,6 +72,9 @@ end
   gem 'hirb'
   gem 'hirb-unicode'
 
+  # generate ER
+  gem 'rails-erd'
+
 end
 
 # heroku settings
