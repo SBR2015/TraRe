@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sentence</th>
+      <th>Is translation</th>
+      <th>Owner</th>
+      <th>Translator</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.sentence %></td>
+        <td><%= resume.is_translation %></td>
+        <td><%= resume.owner_id %></td>
+        <td><%= resume.translator_id %></td>
+        <td><%= resume.language %></td>
+        <td><%= link_to 'Show', resume %></td>
+        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
+        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resume', new_resume_path %>
