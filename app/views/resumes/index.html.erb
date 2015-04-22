@@ -19,9 +19,9 @@
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
-        <td><%= resume.owner_id %></td>
-        <td><%= resume.translator_id %></td>
-        <td><%= resume.language %></td>
+        <td><%= resume.owner.username %></td>
+        <td><%= resume.translator.username %></td>
+        <td><%= resume.written_language.code %></td>
         <td><%= link_to 'Show', resume %></td>
         <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
         <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>

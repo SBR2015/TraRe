@@ -1,4 +1,5 @@
 <%= form_for(@resume) do |f| %>
+  <!--<%= debug current_user %>-->
   <% if @resume.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
@@ -21,15 +22,21 @@
   </div>
   <div class="field">
     <%= f.label :owner_id %><br>
-    <%= f.number_field :owner_id %>
+    <!--<%= f.number_field :owner_id %>-->
+    <%= f.select :owner_id, User.all.map { |u| [u.username, u.id] } %>
+    <!--<%= f.select :owner_id, {current_user.username => current_user.id} %>-->
   </div>
   <div class="field">
     <%= f.label :translator_id %><br>
-    <%= f.number_field :translator_id %>
+    <!--<%= f.number_field :translator_id %>-->
+    <!--<%= f.select :translator_id, User.all.map { |u| [u.username, u.id] } %>-->
+    <%= f.select :translator_id, {current_user.username => current_user.id} %>
+
   </div>
   <div class="field">
     <%= f.label :language_id %><br>
-    <%= f.text_field :language_id %>
+    <%= f.select :language_id, Language.all.map { |l| [l.code, l.id] } %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
