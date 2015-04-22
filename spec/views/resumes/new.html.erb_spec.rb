@@ -7,7 +7,7 @@ RSpec.describe "resumes/new", type: :view do
       :is_translation => false,
       :owner_id => 1,
       :translator_id => 1,
-      :language => nil
+      :language_id => nil
     ))
   end
 

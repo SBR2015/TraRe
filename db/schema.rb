@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20150416113215) do
   add_index "languages", ["code"], name: "index_languages_on_code", unique: true
 
   create_table "resumes", force: :cascade do |t|
-    t.text     "sentence"
-    t.boolean  "is_translation"
+    t.text     "sentence",       default: "",    null: false
+    t.boolean  "is_translation", default: false, null: false
     t.integer  "owner_id"
     t.integer  "translator_id"
     t.integer  "language_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "resumes", ["language_id"], name: "index_resumes_on_language_id"
