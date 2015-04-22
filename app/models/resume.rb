@@ -12,5 +12,4 @@ class Resume < ActiveRecord::Base
   belongs_to :written_language,
              class_name: 'Language',
              foreign_key: 'language_id'
-
 end

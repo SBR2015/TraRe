@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resumes
   devise_for :users
 
   root 'top#index'
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
   match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
 
   match '/api/myinfo', to: 'my#info', via: 'get'
+
+  # get 'resumes/index'
+  # match '/resume', to: 'resumes#index', via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sentence:</strong>
+  <%= @resume.sentence %>
+</p>
+
+<p>
+  <strong>Is translation:</strong>
+  <%= @resume.is_translation %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @resume.owner_id %>
+</p>
+
+<p>
+  <strong>Translator:</strong>
+  <%= @resume.translator_id %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @resume.language %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>
