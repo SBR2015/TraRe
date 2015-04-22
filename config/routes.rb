@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   match '/api/myinfo', to: 'my#info', via: 'get'
 
   # get 'resumes/index'
-  match '/resume', to: 'resumes#index', via: 'get'
+  # match '/resume', to: 'resumes#index', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
