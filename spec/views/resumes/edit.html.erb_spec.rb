@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "resumes/edit", type: :view do
+  pending "add some examples to (or delete) #{__FILE__}"
   # before(:each) do
   #   @resume = assign(:resume, Resume.create!(
   #     :sentence => "MyString",
