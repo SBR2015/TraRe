@@ -5,7 +5,7 @@ class CreateResumes < ActiveRecord::Migration
       t.boolean :is_translation, null: false, default: false
       t.integer :owner_id
       t.integer :translator_id
-      t.references :language, index: true, foreign_key: true
+      t.integer :language_id
 
       t.timestamps null: false
     end
