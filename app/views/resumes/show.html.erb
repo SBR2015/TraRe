@@ -12,17 +12,17 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @resume.owner_id %>
+  <%= @resume.owner.username %>
 </p>
 
 <p>
   <strong>Translator:</strong>
-  <%= @resume.translator_id %>
+  <%= @resume.translator.username %>
 </p>
 
 <p>
   <strong>Language:</strong>
-  <%= @resume.language %>
+  <%= @resume.written_language.code %>
 </p>
 
 <%= link_to 'Edit', edit_resume_path(@resume) %> |

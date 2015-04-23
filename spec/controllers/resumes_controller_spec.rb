@@ -20,12 +20,13 @@ require 'rails_helper'
 
 RSpec.describe ResumesController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
+  # describe "GET #index" do
+  #   it "returns http success" do
+  #     get :index
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
 
   # This should return the minimal set of attributes required to create a valid
   # Resume. As you add validations to Resume, be sure to
