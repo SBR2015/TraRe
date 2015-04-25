@@ -3,6 +3,8 @@ class MyController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @my_resumes = Resume.where(owner_id: current_user.id).order(:created_at).reverse_order
+
   end
 
   def info
