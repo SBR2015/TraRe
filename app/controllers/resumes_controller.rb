@@ -5,9 +5,9 @@ class ResumesController < ApplicationController
   # GET /[:username]
   # GET /[:username].json
   def userindex
-    @name = params[:username]
-    @user = User.find_by(username: @name)
-    @resumes = Resume.where(owner_id: @user.id).order(:created_at).reverse_order
+    name = params[:username]
+    user = User.find_by(username: name)
+    @resumes = Resume.where(owner_id: user.id).order(:created_at).reverse_order
     render action: :index
   end
 
