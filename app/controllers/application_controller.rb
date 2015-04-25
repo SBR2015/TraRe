@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
 
   # devise path settings after login
   def after_sign_in_path_for(resource)
-    '/user/' + current_user.username
+    #'/user/' + current_user.username
+    '/resumes/'
   end
 
   # devise path settings after logout
