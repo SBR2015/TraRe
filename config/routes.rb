@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :languages
   resources :resumes
+  match '/:username', to: 'resumes#userindex', via: 'get'
+
   devise_for :users
 
   root 'top#index'

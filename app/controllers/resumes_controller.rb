@@ -2,6 +2,14 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
+  # GET /[:username]
+  # GET /[:username].json
+  def userindex
+    # user = User.find_by(username: 'hoge')
+    @resumes = Resume.where(owner_id: 1).order(:created_at).reverse_order
+    render action: :index
+  end
+
   # GET /resumes
   # GET /resumes.json
   def index
