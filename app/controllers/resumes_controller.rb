@@ -7,7 +7,7 @@ class ResumesController < ApplicationController
   def userindex
     name = params[:username]
     user = User.find_by(username: name)
-    @resumes = Resume.where(owner_id: user.id).order(:created_at).reverse_order
+    @resumes = Resume.where(owner_id: user.id).order(:created_at)
     render action: :index
   end
 
