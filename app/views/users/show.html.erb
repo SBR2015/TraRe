@@ -1,3 +1,11 @@
 <h1>Hello, <%= current_user.username %> !</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%= link_to 'New Resume', new_user_resume_path(user_username: params[:username]) %>
+<p>
+  <h4>
+    <%= link_to "this user's Resumes", user_resumes_path(user_username: params[:username]) %>
+  </h4>
+</p>
+<p>
+  <h4>
+    <%= link_to "your Resumes", user_resumes_path(user_username: current_user.username) %>
+  </h4>
+</p>

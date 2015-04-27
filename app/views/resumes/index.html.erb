@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%= debug @debug %>
-
 <h1>Original Resume</h1>
 
 <table>
@@ -30,7 +28,7 @@
         <% end %>
       </tr>
   
-    <% elsif current_user.username == params[:username] %>
+    <% elsif current_user.username == params[:user_username] %>
       <%= link_to 'New Resume', new_user_resume_path %>
     <% end %>
   </tbody>

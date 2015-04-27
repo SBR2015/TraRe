@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :languages
   # resources :resumes
-  resources :users, path: 'user', only: [:show], param: 'username' do
-    resources :resumes, only: [:new, :edit, :create, :update, :destroy, :index]
+  resources :users, path: 'user', only: [:show], param: :username do
+    resources :resumes#, only: [:new, :edit, :create, :update, :destroy, :index]
 
   end
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root 'top#index'
 
   # get 'my/index'
-  match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
+  # match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
 
   match '/api/myinfo', to: 'my#info', via: 'get'
 

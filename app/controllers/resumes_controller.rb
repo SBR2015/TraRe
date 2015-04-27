@@ -1,56 +1,37 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
+  before_action :set_param_user, only: [:edit, :update, :destroy, :new, :create, :index]
 
-  # GET /[:username]
-  # GET /[:username].json
-  # def userindex
-  #   @debug = current_user.username
-  #
-  #   name = params[:username]
-  #   user = User.find_by(username: name)
-  #   @resumes = Resume.where(owner_id: user.id).order(:created_at)
-  #   render action: :index
-  # end
-
-  # GET /resumes
-  # GET /resumes.json
+  # GET /user/:user_username/resumes
+  # GET /user/:user_username/resumes.json
   def index
-    # @debug = current_user.username
-    #
-    # @resumes = Resume.all
-    @debug = current_user.username
-
-    name = params[:user_username]
-    user = User.find_by(username: name)
-    @resumes = Resume.where(owner_id: user.id).order(:created_at)
-    # render action: :index
+    @resumes = Resume.where(owner_id: @user.id).order(:created_at)
   end
 
-  # GET /resumes/1
-  # GET /resumes/1.json
+  # GET /user/:user_username/resumes/1
+  # GET /user/:user_username/resumes/1.json
   def show
   end
 
-  # GET /resumes/new
+  # GET /user/:user_username/resumes/new
   def new
     @resume = Resume.new
   end
 
-  # GET /resumes/1/edit
+  # GET /user/:user_username/resumes/1/edit
   def edit
   end
 
-  # POST /resumes
-  # POST /resumes.json
+  # POST /user/:user_username/resumes
+  # POST /user/:user_username/resumes.json
   def create
     @resume = Resume.new(resume_params)
 
-    owner_name = User.find_by(id: @resume.owner_id).username
-
     respond_to do |format|
       if @resume.save
-        format.html { redirect_to '/' + owner_name, notice: 'Resume was successfully created.'  }
+        # format.html { redirect_to '/' + owner_name, notice: 'Resume was successfully created.'  }
+        format.html { redirect_to user_resumes_path, notice: 'Resume was successfully created.'  }
         format.json { render :show, status: :created, location: @resume }
       else
         format.html { render :new }
@@ -59,12 +40,13 @@ class ResumesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /resumes/1
-  # PATCH/PUT /resumes/1.json
+  # PATCH/PUT /user/:user_username/resumes/1
+  # PATCH/PUT /user/:user_username/resumes/1.json
   def update
     respond_to do |format|
       if @resume.update(resume_params)
-        format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
+        format.html { redirect_to user_resumes_path, notice: 'Resume was successfully updated.' }
+        # format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume }
       else
         format.html { render :edit }
@@ -73,12 +55,12 @@ class ResumesController < ApplicationController
     end
   end
 
-  # DELETE /resumes/1
-  # DELETE /resumes/1.json
+  # DELETE /user/:user_username/resumes/1
+  # DELETE /user/:user_username/resumes/1.json
   def destroy
     @resume.destroy
     respond_to do |format|
-      format.html { redirect_to resumes_url, notice: 'Resume was successfully destroyed.' }
+      format.html { redirect_to user_resumes_path, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -93,4 +75,10 @@ class ResumesController < ApplicationController
     def resume_params
       params.require(:resume).permit(:sentence, :is_translation, :owner_id, :translator_id, :language_id)
     end
+
+    # Set username(/user/:user_username)
+    def set_param_user
+      @user = User.find_by(username: params[:user_username])
+    end
+
 end

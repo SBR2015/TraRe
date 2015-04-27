@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
+  # resources params change :id to :username
+  def to_param
+    return username
+  end
 
   # get method for User information
   # def self.get_user_info(username)
