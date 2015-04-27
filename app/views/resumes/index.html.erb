@@ -12,26 +12,29 @@
       <th>Owner</th>
       <th>Translator</th>
       <th>Language</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% resume = @resumes.first %>
+    <% if resume = @resumes.first %>
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
         <td><%= resume.owner.username %></td>
         <td><%= resume.translator.username %></td>
         <td><%= resume.written_language.code %></td>
-        <td><%= link_to 'Show', user_resume_path(id: resume.id) %></td>
-        <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
-        <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id == resume.owner_id %>
+          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
+  
+    <% elsif current_user.username == params[:username] %>
+      <%= link_to 'New Resume', new_user_resume_path %>
+    <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Resume', new_user_resume_path %>
 
 <h1>Listing Translations</h1>
 
@@ -55,13 +58,11 @@
         <td><%= resume.owner.username %></td>
         <td><%= resume.translator.username %></td>
         <td><%= resume.written_language.code %></td>
-        <td><%= link_to 'Show', user_resume_path(id: resume.id) %></td>
-        <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
-        <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
+          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-

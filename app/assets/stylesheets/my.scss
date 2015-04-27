@@ -1,5 +1,4 @@
 body {
-	margin-right: 20px;
 	background: lightblue;}
 
 ul {
@@ -7,7 +6,7 @@ ul {
 	list-style-type: none;
 }
 
-.header {  
+.header {
 	text-align: right;
 }
 
@@ -69,7 +68,6 @@ ul {
 .title {
 	background-color: black;
 	color: white;
-	margin-top: 20px;
 	padding: 10px;
 }
 
@@ -117,7 +115,7 @@ ul {
 	font-size: 1.25em;
 	text-align: center;
 	border-top-right-radius: 0.5em;
-	border-top-left-radius: 0.5em; 
+	border-top-left-radius: 0.5em;
 }
 
 .rightMenu .content li {
@@ -130,7 +128,7 @@ ul {
 	font-size: 1.25em;
 	text-align: center;
 	border-top-right-radius: 0.5em;
-	border-top-left-radius: 0.5em; 
+	border-top-left-radius: 0.5em;
 }
 
 .leftMenu .content li {
@@ -153,5 +151,11 @@ ul {
 	font-size: 1.25em;
 	text-align: center;
 	border-top-right-radius: 0.5em;
-	border-top-left-radius: 0.5em; 
+	border-top-left-radius: 0.5em;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
 }

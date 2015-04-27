@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :languages
   # resources :resumes
   resources :users, path: 'user', only: [:show], param: 'username' do
-    resources :resumes#, only: [:new, :edit, :create, :update, :destroy, :index]
+    resources :resumes, only: [:new, :edit, :create, :update, :destroy, :index]
 
   end
 
