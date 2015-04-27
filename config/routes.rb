@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :languages
-  resources :resumes
-  match '/:username', to: 'resumes#userindex', via: 'get'
+  # resources :resumes
+  resources :users, path: 'user', only: [:show], param: 'username' do
+    resources :resumes#, only: [:new, :edit, :create, :update, :destroy, :index]
+
+  end
+
+  # match '/user/:user_username/resumes', to: 'resumes#userindex', via: 'get'#, as: 'user_resumes'
 
   devise_for :users
 

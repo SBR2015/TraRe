@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= debug @debug %>
+
 <h1>Original Resume</h1>
 
 <table>
@@ -22,14 +24,14 @@
         <td><%= resume.owner.username %></td>
         <td><%= resume.translator.username %></td>
         <td><%= resume.written_language.code %></td>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_resume_path(id: resume.id) %></td>
+        <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+        <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   </tbody>
 </table>
 
-<%= link_to 'New Resume', new_resume_path %>
+<%= link_to 'New Resume', new_user_resume_path %>
 
 <h1>Listing Translations</h1>
 
@@ -53,9 +55,9 @@
         <td><%= resume.owner.username %></td>
         <td><%= resume.translator.username %></td>
         <td><%= resume.written_language.code %></td>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_resume_path(id: resume.id) %></td>
+        <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+        <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

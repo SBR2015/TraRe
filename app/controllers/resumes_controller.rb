@@ -4,17 +4,27 @@ class ResumesController < ApplicationController
 
   # GET /[:username]
   # GET /[:username].json
-  def userindex
-    name = params[:username]
-    user = User.find_by(username: name)
-    @resumes = Resume.where(owner_id: user.id).order(:created_at)
-    render action: :index
-  end
+  # def userindex
+  #   @debug = current_user.username
+  #
+  #   name = params[:username]
+  #   user = User.find_by(username: name)
+  #   @resumes = Resume.where(owner_id: user.id).order(:created_at)
+  #   render action: :index
+  # end
 
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.all
+    # @debug = current_user.username
+    #
+    # @resumes = Resume.all
+    @debug = current_user.username
+
+    name = params[:user_username]
+    user = User.find_by(username: name)
+    @resumes = Resume.where(owner_id: user.id).order(:created_at)
+    # render action: :index
   end
 
   # GET /resumes/1
@@ -36,9 +46,11 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
 
+    owner_name = User.find_by(id: @resume.owner_id).username
+
     respond_to do |format|
       if @resume.save
-        format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
+        format.html { redirect_to '/' + owner_name, notice: 'Resume was successfully created.'  }
         format.json { render :show, status: :created, location: @resume }
       else
         format.html { render :new }
