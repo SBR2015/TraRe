@@ -1,3 +1,4 @@
+
 <h1>Hello, <%= current_user.username %> !</h1>
 <p>
   <h4>
@@ -9,3 +10,30 @@
     <%= link_to "your Resumes", user_resumes_path(user_username: current_user.username) %>
   </h4>
 </p>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="row-fluid">
+				<div class="span12">
+					<h2>
+						登録情報
+					</h2>
+
+					<p>
+						アカウント：<%= current_user.username %>
+					</p>
+          <p>
+            Eメール：　<%= current_user.email %>
+          </p>
+					<p>
+						レジュメした件数：
+					</p>
+					<p>
+						レジュメされた件数：
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
