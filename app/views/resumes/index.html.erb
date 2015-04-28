@@ -4,38 +4,19 @@
 <%= link_to 'My Page', new_resume_path %>
 <h1>Listing Other's Resumes</h1>
 
-<%# search_form_for を使うことで検索フォームを作成 %>
-<%= search_form_for @search do |f| %>
-
-  <%= f.label :owner_username_cont, "Owner" %>
-  <%= f.search_field :owner_username_cont %>
-<br />
-  <%= f.label :translator_username_cont, "Translator" %>
-  <%= f.search_field :translator_username_cont %>
-<br />
- <%= f.label :written_language_code_start, "Written_language" %>
- <%= f.search_field :written_language_code_start %>
-<br />
- <%= f.label :is_translation_start, "Is translation" %>
- <%= f.search_field :is_translation_start %>
-<br />
- <%= f.label :sentence_start, "Sentence" %>
- <%= f.search_field :sentence_start %>
-<br />
-
-<%# 検索ボタン %>
- <%= f.submit %>
+<%= form_tag('/resumes') do %>
+  <%= select :language, :id, @languages.all.map { |l| [l.code, l.id] } %>
+  <%= submit_tag(['Search']) %>
 <% end %>
 
-<hr />
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Sentence</th>
       <th>Is translation</th>
-      <th><%= sort_link(@search, :Owner) %></th>
-      <th><%= sort_link(@search, :Translator) %></th>
+      <th>Owner</th>
+      <th>Translator</th>
       <th>Language</th>
       <th colspan="3"></th>
     </tr>
@@ -46,9 +27,9 @@
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
-        <td><%= resume.owner.username %></td>
-        <td><%= resume.translator.username %></td>
-        <td><%= resume.written_language.code %></td>
+        <td><%= resume.owner_id %></td>
+        <td><%= resume.translator_id %></td>
+        <td><%= resume.language_id %></td>
         <td><%= link_to 'Show', resume %></td>
         <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
         <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -58,5 +39,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Resume', new_resume_path %>

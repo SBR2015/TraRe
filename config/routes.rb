@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :resumes
   devise_for :users
 
-  root 'top#index'
+  root 'resumes#index'
 
   # get 'my/index'
   match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
