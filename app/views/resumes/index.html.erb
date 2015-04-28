@@ -57,7 +57,7 @@
         <td><%= resume.owner.username %></td>
         <td><%= resume.translator.username %></td>
         <td><%= resume.written_language.code %></td>
-        <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
+        <% if current_user.id == resume.translator_id || current_user.id == resume.owner_id %>
           <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
           <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
