@@ -4,7 +4,7 @@
 <%= link_to 'My Page', new_resume_path %>
 <h1>Listing Other's Resumes</h1>
 
-<%= form_tag('/resumes') do %>
+<%= form_tag('/resumes', method:"get") do %>
   <%= select :language, :id, @languages.all.map { |l| [l.code, l.id] } %>
   <%= submit_tag(['Search']) %>
 <% end %>
