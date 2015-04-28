@@ -27,7 +27,7 @@
           <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
-  
+
     <% elsif current_user.username == params[:user_username] %>
       <%= link_to 'New Resume', new_user_resume_path %>
     <% end %>

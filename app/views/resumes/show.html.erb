@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Resume -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Sentence:</strong>
-  <%= @resume.sentence %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:sentence) %>:</strong></dt>
+  <dd><%= @resume.sentence %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_translation) %>:</strong></dt>
+  <dd><%= @resume.is_translation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:owner_id) %>:</strong></dt>
+  <dd><%= @resume.owner_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:translator_id) %>:</strong></dt>
+  <dd><%= @resume.translator_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:language_id) %>:</strong></dt>
+  <dd><%= @resume.language_id %></dd>
+</dl>
 
-<p>
-  <strong>Is translation:</strong>
-  <%= @resume.is_translation %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @resume.owner.username %>
-</p>
-
-<p>
-  <strong>Translator:</strong>
-  <%= @resume.translator.username %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @resume.written_language.code %>
-</p>
-
-<%= link_to 'Edit', edit_resume_path(@resume) %> |
-<%= link_to 'Back', resumes_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              resumes_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_resume_path(@resume), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              resume_path(@resume),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
