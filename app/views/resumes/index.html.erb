@@ -1,44 +1,66 @@
-<%- model_class = Resume -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+<p id="notice"><%= notice %></p>
+
+<h1>Original Resume</h1>
+
+<table>
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:sentence) %></th>
-      <th><%= model_class.human_attribute_name(:is_translation) %></th>
-      <th><%= model_class.human_attribute_name(:owner_id) %></th>
-      <th><%= model_class.human_attribute_name(:translator_id) %></th>
-      <th><%= model_class.human_attribute_name(:language_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Sentence</th>
+      <th>Is translation</th>
+      <th>Owner</th>
+      <th>Translator</th>
+      <th>Language</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
+
   <tbody>
-    <% @resumes.each do |resume| %>
+    <% if resume = @resumes.first %>
       <tr>
-        <td><%= link_to resume.id, resume_path(resume) %></td>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
-        <td><%= resume.owner_id %></td>
-        <td><%= resume.translator_id %></td>
-        <td><%= resume.language_id %></td>
-        <td><%=l resume.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_resume_path(resume), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      resume_path(resume),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
+        <td><%= resume.owner.username %></td>
+        <td><%= resume.translator.username %></td>
+        <td><%= resume.written_language.code %></td>
+        <% if current_user.id == resume.owner_id %>
+          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
+
+    <% elsif current_user.username == params[:user_username] %>
+      <%= link_to 'New Resume', new_user_resume_path %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_resume_path,
-            :class => 'btn btn-primary' %>
+<h1>Listing Translations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sentence</th>
+      <th>Is translation</th>
+      <th>Owner</th>
+      <th>Translator</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resumes.drop(1).each do |resume| %>
+      <tr>
+        <td><%= resume.sentence %></td>
+        <td><%= resume.is_translation %></td>
+        <td><%= resume.owner.username %></td>
+        <td><%= resume.translator.username %></td>
+        <td><%= resume.written_language.code %></td>
+        <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
+          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
+          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
