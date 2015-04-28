@@ -2,6 +2,7 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
   before_action :set_param_user, only: [:edit, :update, :destroy, :new, :create, :index]
+  before_action :set_param_language, only: [:new, :edit]
 
   # GET /user/:user_username/resumes
   # GET /user/:user_username/resumes.json
@@ -17,14 +18,6 @@ class ResumesController < ApplicationController
   # GET /user/:user_username/resumes/new
   def new
     @resume = Resume.new
-
-    # @language = Language.all
-
-    # 他ユーザーへの翻訳レジュメを作成するとき、オリジナルレジュメで書かれている言語を除外する。
-    # unless current_user.id == @user.id
-    #   @language.push()
-    # end
-
   end
 
   # GET /user/:user_username/resumes/1/edit
@@ -92,6 +85,24 @@ class ResumesController < ApplicationController
     # Set username(/user/:user_username)
     def set_param_user
       @user = User.find_by(username: params[:user_username])
+    end
+
+    # set language
+    def set_param_language
+      @language = Language.all.pluck :code, :id
+
+      # URLのユーザーが自分自身だった場合、全て選択出来る。
+      return @language if current_user.username == params[:user_username]
+
+      # URLのユーザーのidを取得
+      url_user_id = User.find_by(username: params[:user_username]).id
+
+      # 他ユーザーへの翻訳レジュメを作成するとき、オリジナルレジュメで書かれている言語を除外する。
+      original_resume_language_id = Resume.where(owner_id: url_user_id).where(is_translation: false).pluck :language_id
+      original_resume_language = Language.where(id: original_resume_language_id).pluck :code, :id
+      @language -= original_resume_language
+
+      return @language
     end
 
 end

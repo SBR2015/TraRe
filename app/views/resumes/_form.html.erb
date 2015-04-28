@@ -1,3 +1,5 @@
+<%= debug @debug %>
+
 <%= form_for([@user, @resume]) do |f| %>
   <% if @resume.errors.any? %>
     <div id="error_explanation">
@@ -33,7 +35,8 @@
   <!--</div>-->
   <div class="field">
     <%= f.label :language_id %><br>
-    <%= f.select :language_id, Language.all.map { |l| [l.code, l.id] } %>
+    <%#= f.select :language_id, Language.all.map { |l| [l.code, l.id] } %>
+    <%= f.select :language_id, @language %>
 
   </div>
   <div class="actions">
