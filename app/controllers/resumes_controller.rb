@@ -64,7 +64,14 @@ class ResumesController < ApplicationController
   # DELETE /user/:user_username/resumes/1
   # DELETE /user/:user_username/resumes/1.json
   def destroy
-    @resume.destroy
+
+    if @resume.is_translation
+      @resume.destroy
+    else
+      delete_resume = Resume.where(owner_id: @resume.owner_id)
+      delete_resume.destroy_all
+    end
+
     respond_to do |format|
       format.html { redirect_to user_resumes_path, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }
