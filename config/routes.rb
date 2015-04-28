@@ -2,12 +2,10 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :languages
-  resources :resumes
   devise_for :users
 
-  root 'resumes#index'
-
   # get 'my/index'
+  match '/resumes', to: 'resumes#index', as: 'resumes_root', via: 'get'
   match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
 
   match '/api/myinfo', to: 'my#info', via: 'get'

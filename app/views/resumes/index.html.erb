@@ -1,41 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'My Resume', new_resume_path %>
-<%= link_to 'My Page', new_resume_path %>
+<!-- link_to 'My Resume', new_resume_path -->
+<!-- link_to 'My Page', new_resume_path -->
 <h1>Listing Other's Resumes</h1>
 
 <%= form_tag('/resumes', method:"get") do %>
-  <%= select :language, :id, @languages.all.map { |l| [l.code, l.id] } %>
+  <%= @selected_lang_id %>
+  <select name="language_id">
+    <% Language.all.each do |lang| %>
+      <% if lang[:id] == @selected_lang_id.to_i %>
+        <option value="<%= lang[:id] %>" selected><%= lang[:code] %></option>
+      <% else %>
+        <option value="<%= lang[:id] %>"><%= lang[:code] %></option>
+      <% end %>
+    <% end %>
+  </select>
   <%= submit_tag(['Search']) %>
 <% end %>
 
-
 <table border="1">
-  <thead>
-    <tr>
-      <th>Sentence</th>
-      <th>Is translation</th>
-      <th>Owner</th>
-      <th>Translator</th>
-      <th>Language</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resumes.each do |resume| %>
-      <tr>
-        <td><%= resume.sentence %></td>
-        <td><%= resume.is_translation %></td>
-        <td><%= resume.owner_id %></td>
-        <td><%= resume.translator_id %></td>
-        <td><%= resume.language_id %></td>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <tr>
+    <th>Sentence</th>
+    <th>Is translation</th>
+    <th>Owner</th>
+    <th>Translator</th>
+    <th>Language</th>
+  </tr>
+  <% @resumes.each do |r| %>
+  <tr>
+    <td><%= r.sentence %></td>
+    <td><%= r.is_translation %></td>
+    <td><%= r.owner_id %></td>
+    <td><%= r.translator_id %></td>
+    <td><%= r.language_id %></td>
+  </tr>
+  <% end %>
 </table>
 
 <br>
