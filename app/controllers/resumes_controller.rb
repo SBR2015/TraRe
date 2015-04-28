@@ -11,6 +11,8 @@ class ResumesController < ApplicationController
         resume = Resume.find_by language_id: @selected_lang_id
         if resume == nil then
           @resumes
+
+        # TODO この実装ひどすぎるのでどうにかしたい
         elsif resume.is_a?(ActiveRecord::Relation) then
           resume.map {|r| [r]}
           @resumes.concat(resume)
@@ -21,6 +23,8 @@ class ResumesController < ApplicationController
         resume = Resume.all
         if resume == nil then
           @resumes
+
+        # TODO この実装ひどすぎるのでどうにかしたい
         elsif resume.is_a?(ActiveRecord::Relation) then
           resume.map {|r| [r]}
           @resumes.concat(resume)
