@@ -1,21 +1,31 @@
-<%= form_for(@language) do |f| %>
-  <% if @language.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@language.errors.count, "error") %> prohibited this language from being saved:</h2>
+<%= form_for @language, :html => { :class => "form-horizontal language" } do |f| %>
 
-      <ul>
-      <% @language.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @language.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@language.errors.count, "error") %> prohibited this language from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @language.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
+  <div class="control-group">
+    <%= f.label :code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :code, :class => 'form-control' %>
+    </div>
+    <%= error_span(@language[:code]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            languages_path, :class => 'btn btn-default' %>
+
 <% end %>
