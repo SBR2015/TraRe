@@ -17,6 +17,14 @@ class ResumesController < ApplicationController
   # GET /user/:user_username/resumes/new
   def new
     @resume = Resume.new
+
+    # @language = Language.all
+
+    # 他ユーザーへの翻訳レジュメを作成するとき、オリジナルレジュメで書かれている言語を除外する。
+    # unless current_user.id == @user.id
+    #   @language.push()
+    # end
+
   end
 
   # GET /user/:user_username/resumes/1/edit
@@ -28,7 +36,12 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
 
-    respond_to do |format|
+    # set resume params
+    @resume.owner_id = @user.id
+    @resume.translator_id = current_user.id
+    @resume.is_translation = @user.id == current_user.id ? false : true
+
+      respond_to do |format|
       if @resume.save
         # format.html { redirect_to '/' + owner_name, notice: 'Resume was successfully created.'  }
         format.html { redirect_to user_resumes_path, notice: 'Resume was successfully created.'  }

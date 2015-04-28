@@ -15,7 +15,8 @@
   </thead>
 
   <tbody>
-    <% if resume = @resumes.first %>
+  <% resume = @resumes.first %>
+    <% if resume.present? %>
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
@@ -64,3 +65,9 @@
     <% end %>
   </tbody>
 </table>
+
+<!-- Link to create translation resumes in Other User's Resume -->
+<%# if current_user.username != params[:user_username] && resume.present? %>
+<% unless current_user.username == params[:user_username] || resume.blank? %>
+  <%= link_to 'new Translation Resume', new_user_resume_path %>
+<% end %>
