@@ -5,7 +5,9 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.all
+   # @resumes = Resume.all
+   @search = Resume.search(params[:q])
+   @resumes = @search.result(distinct: true)
   end
 
   # GET /resumes/1

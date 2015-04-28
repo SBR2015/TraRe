@@ -4,7 +4,13 @@
 <%= link_to 'My Page', new_resume_path %>
 <h1>Listing Other's Resumes</h1>
 
-<table>
+<%= search_form_for @search do |f| %>
+<%= f.label :language_id, 'Language' %>
+<%= f.select :language_id_eq, Language.all.map{ |l| [l.code, l.id] } %>
+<%= f.submit %>
+<% end %>
+
+<table border="1">
   <thead>
     <tr>
       <th>Sentence</th>

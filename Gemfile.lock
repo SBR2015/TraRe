@@ -188,6 +188,8 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -242,6 +244,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    ransack (1.6.6)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -369,6 +377,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-erd
   rails_12factor
+  ransack
   rb-fsevent
   rspec-rails (~> 3.2.1)
   sass-rails (~> 5.0)
