@@ -1,4 +1,5 @@
-<h1>Hello, <%= current_user.username %> !</h1>
+<%= render "layouts/nav" %>
+<h1>Hello, <%= @user.username %> !</h1>
 <p>
   <h4>
     <%= link_to "this user's Resumes", user_resumes_path(user_username: params[:username]) %>
@@ -6,7 +7,7 @@
 </p>
 <p>
   <h4>
-    <%= link_to "your Resumes", user_resumes_path(user_username: current_user.username) %>
+    <%= link_to "your Resumes", user_resumes_path(user_username: @user.username) %>
   </h4>
 </p>
 
@@ -20,10 +21,10 @@
 					</h2>
 
 					<p>
-						アカウント：<%= current_user.username %>
+						アカウント：<%= @user.username %>
 					</p>
           <p>
-            Eメール：　<%= current_user.email %>
+            Eメール：　<%= @user.email %>
           </p>
 					<p>
 						レジュメした件数：
