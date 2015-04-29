@@ -1,38 +1,30 @@
-<h1>Hello, <%= @user.username %> !</h1>
-<p>
-  <h4>
-    <%= link_to "this user's Resumes", user_resumes_path(user_username: params[:username]) %>
-  </h4>
-</p>
-<p>
-  <h4>
-    <%= link_to "your Resumes", user_resumes_path(user_username: @user.username) %>
-  </h4>
-</p>
-
 <div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12">
-			<div class="row-fluid">
-				<div class="span12">
-					<h2>
-						登録情報
-					</h2>
-
-					<p>
-						アカウント：<%= @user.username %>
-					</p>
-          <p>
-            Eメール：　<%= @user.email %>
-          </p>
-					<p>
-						レジュメした件数：
-					</p>
-					<p>
-						レジュメされた件数：
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row-fluid">
+    <div class="left-col col-md-7">
+      <div class="left-title">
+        <h1>Hello, <%= current_user.username %> !</h1>
+      </div>
+      <p>
+        <h4>
+          <%= link_to "this user's Resumes", user_resumes_path(user_username: params[:username]) %>
+        </h4>
+      </p>
+      <p>
+        <h4>
+          <%= link_to "your Resumes", user_resumes_path(user_username: @user.username) %>
+        </h4>
+      </p>
+    </div>
+    <div class="right-col col-md-4 col-md-offset-1">
+      <div class="right-title">
+        <h1>Information</h1>
+      </div>
+      <p>
+        account：<%= current_user.username %>
+      </p>
+      <p>
+        E-mail：　<%= current_user.email %>
+      </p>
+    </div>
+  </div>
 </div>
