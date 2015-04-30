@@ -7,7 +7,10 @@ class ResumesController < ApplicationController
   # GET /user/:user_username/resumes
   # GET /user/:user_username/resumes.json
   def index
-    @resumes = Resume.where(owner_id: @user.id).order(:created_at)
+    all_resumes = Resume.where(owner_id: @user.id).order(:created_at)
+    @original_resumes = all_resumes.where(is_translation: false)
+    @translated_resumes = all_resumes.where(is_translation: true)
+
   end
 
   # GET /user/:user_username/resumes/1

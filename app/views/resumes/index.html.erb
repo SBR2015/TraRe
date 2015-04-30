@@ -15,8 +15,8 @@
   </thead>
 
   <tbody>
-  <% resume = @resumes.first %>
-    <% if resume.present? %>
+  <% resume = @original_resumes.first %>
+  <% if resume.present? %>
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
@@ -50,7 +50,7 @@
   </thead>
 
   <tbody>
-    <% @resumes.drop(1).each do |resume| %>
+    <% @translated_resumes.each do |resume| %>
       <tr>
         <td><%= resume.sentence %></td>
         <td><%= resume.is_translation %></td>
