@@ -1,66 +1,62 @@
-<p id="notice"><%= notice %></p>
+<p class="bg-info">
+  <h2 class='text-center'>Your Resume and Translations</h2>
+</p>
 
-<h1>Original Resume</h1>
-
-<table>
+<table class="table resume-table">
+  <% resume = @original_resumes.first %>
   <thead>
     <tr>
-      <th>Sentence</th>
-      <th>Is translation</th>
-      <th>Owner</th>
+      <th class="col-md-8 resume">Your Resume</th>
+      <th class="col-md-4">Info</th>
+      <!-- <th>Owner</th>
       <th>Translator</th>
       <th>Language</th>
-      <th colspan="2"></th>
+      <th colspan="2"></th> -->
     </tr>
   </thead>
 
   <tbody>
-  <% resume = @original_resumes.first %>
-  <% if resume.present? %>
       <tr>
-        <td><%= resume.sentence %></td>
-        <td><%= resume.is_translation %></td>
-        <td><%= resume.owner.username %></td>
-        <td><%= resume.translator.username %></td>
-        <td><%= resume.written_language.code %></td>
-        <% if current_user.id == resume.owner_id %>
-          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
-          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if resume.present? %>
+          <td class="col-md-8 resume"><%= resume.sentence %></td>
+          <td class="col-md-4 info">
+            <ul>
+              <li>owner: <%= resume.owner.username %></li>
+              <li>lang: <%= resume.written_language.code %></li>
+              <% if current_user.id == resume.owner_id %>
+                <li><%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %></li>
+                <li><%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></li>
+              <% end %>
+            </ul>
+          </td>
+        <% elsif current_user.username == params[:user_username] %>
+          <td class="col-md-8"><%= link_to 'New Resume', new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %></td>
         <% end %>
       </tr>
-
-    <% elsif current_user.username == params[:user_username] %>
-      <%= link_to 'New Resume', new_user_resume_path %>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>Listing Translations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Sentence</th>
-      <th>Is translation</th>
-      <th>Owner</th>
-      <th>Translator</th>
-      <th>Language</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    </tbody>
+    <thead>
+      <tr>
+        <th class="col-md-8 resume">Your Translations</th>
+        <th class="col-md-4">Info</th>
+        <!-- <th>Owner</th>
+        <th>Translator</th>
+        <th>Language</th>
+        <th colspan="2"></th> -->
+      </tr>
+    </thead>
     <% @translated_resumes.each do |resume| %>
       <tr>
-        <td><%= resume.sentence %></td>
-        <td><%= resume.is_translation %></td>
-        <td><%= resume.owner.username %></td>
-        <td><%= resume.translator.username %></td>
-        <td><%= resume.written_language.code %></td>
-        <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
-          <td><%= link_to 'Edit', edit_user_resume_path(id: resume.id) %></td>
-          <td><%= link_to 'Destroy', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td class="col-md-8 resume"><%= resume.sentence %></td>
+        <td class="col-md-4 info">
+          <ul>
+            <li>owner: <%= resume.owner.username %></li>
+            <li>lang: <%= resume.written_language.code %></li>
+            <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
+              <li><%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %></li>
+              <li><%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></li>
+            <% end %>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>
