@@ -11,19 +11,19 @@
       <p>
         <h4><%= @user.username %>'s Resumes</h4>
         <% @resumes.each do |t| %>
-          <li><%= link_to t.owner.username || 'nowhere man', user_path(username: t.owner.username) %></li>
+          <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
         <% end %>
       </p>
       <p>
         <h4><%= @user.username %>'s Translations</h4>
         <% @theirtranslations.each do |t| %>
-          <li><%= link_to t.owner.username || 'nowhere man', user_path(username: t.owner.username) %></li>
+          <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
         <% end %>
       </p>
       <p>
-        <h4><%= @user.username %>'s Translated Resumes</h4>
+        <h4><%= @user.username %>'s Translators</h4>
         <% @theirtranslateds.each do |t| %>
-          <li><%= link_to t.translator.username || 'nowhere man', user_path(username: t.translator.username) %></li>
+          <li><%= link_to t.translator.username || 'nowhere man', user_resumes_url(user_username: t.translator.username) %></li>
         <% end %>
       </p>
     </div>
@@ -35,16 +35,19 @@
         account： <%= @user.username %>
       </p>
       <p>
+        name： <%= @user.realname %>
+      </p>
+      <p>
         E-mail： <%= @user.email %>
       </p>
       <p>
         Number of Resumes: <%= @resumes.length %>
       </p>
       <p>
-        Number of Resume Translations: <%= @theirtranslations.length %>
+        Number of Translations: <%= @theirtranslations.length %>
       </p>
       <p>
-        Number of Translated Resumes: <%= @theirtranslateds.length %>
+        Number of Translators: <%= @theirtranslateds.length %>
       </p>
     </div>
   </div>
