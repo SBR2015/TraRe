@@ -1,18 +1,30 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="left-col col-md-7">
-      <div class="left-title">
-        <h1>Hello, <%= current_user.username %> !</h1>
-      </div>
+      <% if current_user.id != @user.id %>
+      <% else %>
+        <div class="left-title">
+          <h1>Howdy, <%= current_user.username %> !</h1>
+        </div>
+      <% end %>
+
       <p>
-        <h4>
-          <%= link_to "this user's Resumes", user_resumes_path(user_username: params[:username]) %>
-        </h4>
+        <h4><%= @user.username %>'s Resumes</h4>
+        <% @resumes.each do |t| %>
+          <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
+        <% end %>
       </p>
       <p>
-        <h4>
-          <%= link_to "your Resumes", user_resumes_path(user_username: @user.username) %>
-        </h4>
+        <h4><%= @user.username %>'s Translations</h4>
+        <% @theirtranslations.each do |t| %>
+          <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
+        <% end %>
+      </p>
+      <p>
+        <h4><%= @user.username %>'s Translators</h4>
+        <% @theirtranslateds.each do |t| %>
+          <li><%= link_to t.translator.username || 'nowhere man', user_resumes_url(user_username: t.translator.username) %></li>
+        <% end %>
       </p>
     </div>
     <div class="right-col col-md-4 col-md-offset-1">
@@ -20,10 +32,22 @@
         <h1>Information</h1>
       </div>
       <p>
-        account：<%= current_user.username %>
+        account： <%= @user.username %>
       </p>
       <p>
-        E-mail：　<%= current_user.email %>
+        name： <%= @user.realname %>
+      </p>
+      <p>
+        E-mail： <%= @user.email %>
+      </p>
+      <p>
+        Number of Resumes: <%= @resumes.length %>
+      </p>
+      <p>
+        Number of Translations: <%= @theirtranslations.length %>
+      </p>
+      <p>
+        Number of Translators: <%= @theirtranslateds.length %>
       </p>
     </div>
   </div>

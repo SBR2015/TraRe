@@ -9,6 +9,12 @@ class UsersController < ApplicationController
 
   def setuser
     @user = User.find_by(username: params[:username])
-    render text: 'the user doesn\'t exist.', status: 404 if @user.nil?
+    if @user
+      @theirtranslations = Resume.where(translator_id: @user.id, is_translation: true)
+      @theirtranslateds = Resume.where(owner_id: @user.id, is_translation: true)
+      @resumes = Resume.where(owner_id: @user.id, is_translation: false)
+    else
+      render text: 'the user doesn\'t exist.', status: 404 if @user.nil?
+    end
   end
 end
