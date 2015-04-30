@@ -1,3 +1,22 @@
 // Place all the styles related to the resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-resume {
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 8px;
+}
+
+.resume-table ul li {
+  padding: 4px;
+}
+
+.resume-table thead tr th.resume {
+  border-bottom: 2px solid #d9edf7;
+}
+
+.resume-table tbody tr td.resume {
+  border-top: 1px solid #d9edf7;
+  background-color: #ffffef;
+}

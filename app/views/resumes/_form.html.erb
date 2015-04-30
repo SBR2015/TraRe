@@ -1,3 +1,4 @@
+<div class="form-resume">
 <%= form_for([@user, @resume]) do |f| %>
   <% if @resume.errors.any? %>
     <div id="error_explanation">
@@ -10,9 +11,9 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :sentence %><br>
-    <%= f.text_field :sentence %>
+    <%= f.text_area :sentence, class: 'form-control', rows: 3, placeholder: 'your story' %>
   </div>
   <!--<div class="field">-->
   <!--<%= f.label :is_translation %><br>-->
@@ -31,13 +32,20 @@
     <!--<%= f.select :translator_id, {current_user.username => current_user.id} %>-->
 
   <!--</div>-->
-  <div class="field">
+  <div class="form-group">
     <%= f.label :language_id %><br>
     <%#= f.select :language_id, Language.all.map { |l| [l.code, l.id] } %>
-    <%= f.select :language_id, @language %>
+    <%= f.select :language_id, @language, {}, class: 'form-control' %>
 
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <% if current_page?(action: 'new') %>
+      <%= f.submit 'create', class: 'btn btn-primary' %>
+    <% else %>
+      <%= f.submit 'update', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 <% end %>
+
+<%= link_to 'Back', user_resumes_path %>
+</div>
