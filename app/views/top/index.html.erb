@@ -3,4 +3,8 @@
   <p>
   The time is now: <%= Time.now %>
   </p>
+  <% @resumes.each do | resume| %>
+    <%= resume.id %>
+    <%= resume.sentence %>
+  <% end %>
 </article>
