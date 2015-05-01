@@ -1,12 +1,13 @@
+<% user = params[:user_username]  %>
 <p class="bg-info">
-  <h2 class='text-center'>Your Resume and Translations</h2>
+  <h2 class='text-center'><%= user %>'s Resume and Translations</h2>
 </p>
 
 <table class="table resume-table">
   <% resume = @original_resumes.first %>
   <thead>
     <tr>
-      <th class="col-md-8 resume">Your Resume</th>
+      <th class="col-md-8 resume"><%= user %>'s Resume</th>
       <th class="col-md-4">Info</th>
       <!-- <th>Owner</th>
       <th>Translator</th>
@@ -18,7 +19,7 @@
   <tbody>
       <tr>
         <% if resume.present? %>
-          <td class="col-md-8 resume"><%= resume.sentence %></td>
+          <td class="col-md-8 resume"><%= simple_format(resume.sentence) %></td>
           <td class="col-md-4 info">
             <ul>
               <li>owner: <%= resume.owner.username %></li>
@@ -36,7 +37,7 @@
     </tbody>
     <thead>
       <tr>
-        <th class="col-md-8 resume">Your Translations</th>
+        <th class="col-md-8 resume"><%= user %>'s Translations</th>
         <th class="col-md-4">Info</th>
         <!-- <th>Owner</th>
         <th>Translator</th>
@@ -46,10 +47,10 @@
     </thead>
     <% @translated_resumes.each do |resume| %>
       <tr>
-        <td class="col-md-8 resume"><%= resume.sentence %></td>
+        <td class="col-md-8 resume"><%= simple_format(resume.sentence) %></td>
         <td class="col-md-4 info">
           <ul>
-            <li>owner: <%= resume.owner.username %></li>
+            <li>translator: <%= resume.translator.username %></li>
             <li>lang: <%= resume.written_language.code %></li>
             <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
               <li><%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %></li>
