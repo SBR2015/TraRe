@@ -19,7 +19,7 @@
   <tbody>
       <tr>
         <% if resume.present? %>
-          <td class="col-md-8 resume"><%= simple_format(resume.sentence) %></td>
+          <td class="col-md-8 resume"><%= simple_format(h(resume.sentence)) %></td>
           <td class="col-md-4 info">
             <ul>
               <li>owner: <%= resume.owner.username %></li>
@@ -47,7 +47,7 @@
     </thead>
     <% @translated_resumes.each do |resume| %>
       <tr>
-        <td class="col-md-8 resume"><%= simple_format(resume.sentence) %></td>
+        <td class="col-md-8 resume"><%= simple_format(h(resume.sentence)) %></td>
         <td class="col-md-4 info">
           <ul>
             <li>translator: <%= resume.translator.username %></li>
