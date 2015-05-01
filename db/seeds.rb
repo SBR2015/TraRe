@@ -30,16 +30,6 @@ resumes.each do |row|
   resume.save!
 end
 
-#users = CSV.readlines('db/data/users.csv')
-#users.each do |row|
-#  user = User.new
-#  user.id = row[0]
-#  user.email = row[1]
-#  user.encrypted_password = row[2]
-#  user.username = [3]
-#  user.save!
-#end
-
 # resume1 = Resume.new
 # resume1.sentence = "こんちはー"
 # resume1.owner_id = 1
