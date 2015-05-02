@@ -8,14 +8,14 @@
 # clearing :on
 
 ## Guard internally checks for changes in the Guardfile and exits.
-## If you want Guard to automatically start up again, run guard in a
+## If you want Guard to automatically start up again, run guard in index
 ## shell loop, e.g.:
 ##
 ##  $ while bundle exec guard; do echo "Restarting Guard..."; done
 ##
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
-## the Guardfile to a watched dir and symlink it back, e.g.
+## the Guardfile to index watched dir and symlink it back, e.g.
 #
 #  $ mkdir config
 #  $ mv Guardfile config/

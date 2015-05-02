@@ -1,3 +1,3 @@
 jQuery ->
-  $("a[rel~=popover], .has-popover").popover()
-  $("a[rel~=tooltip], .has-tooltip").tooltip()
+  $("index[rel~=popover], .has-popover").popover()
+  $("index[rel~=tooltip], .has-tooltip").tooltip()
