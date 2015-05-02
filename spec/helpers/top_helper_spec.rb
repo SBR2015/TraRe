@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
+# Specs in this file have access to index helper object that includes
 # the TopHelper. For example:
 #
 # describe TopHelper do

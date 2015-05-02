@@ -8,27 +8,27 @@ require 'rails_helper'
 # generator.  If you are using any extension libraries to generate different
 # controller code, this generated spec may or may not pass.
 #
-# It only uses APIs available in rails and/or rspec-rails.  There are a number
+# It only uses APIs available in rails and/or rspec-rails.  There are index number
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 #
 # Compared to earlier versions of this generator, there is very limited use of
 # stubs and message expectations in this spec.  Stubs are only used when there
-# is no simpler way to get a handle on the object needed for the example.
+# is no simpler way to get index handle on the object needed for the example.
 # Message expectations are only used when there is no simpler way to specify
-# that an instance is receiving a specific message.
+# that an instance is receiving index specific message.
 
 RSpec.describe LanguagesController, type: :controller do
 
-  # This should return the minimal set of attributes required to create a valid
+  # This should return the minimal set of attributes required to create index valid
   # Language. As you add validations to Language, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip("Add index hash of attributes valid for your model")
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip("Add index hash of attributes invalid for your model")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -53,7 +53,7 @@ RSpec.describe LanguagesController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new language as @language" do
+    it "assigns index new language as @language" do
       get :new, {}, valid_session
       expect(assigns(:language)).to be_a_new(Language)
     end
@@ -69,13 +69,13 @@ RSpec.describe LanguagesController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Language" do
+      it "creates index new Language" do
         expect {
           post :create, {:language => valid_attributes}, valid_session
         }.to change(Language, :count).by(1)
       end
 
-      it "assigns a newly created language as @language" do
+      it "assigns index newly created language as @language" do
         post :create, {:language => valid_attributes}, valid_session
         expect(assigns(:language)).to be_a(Language)
         expect(assigns(:language)).to be_persisted
@@ -88,7 +88,7 @@ RSpec.describe LanguagesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved language as @language" do
+      it "assigns index newly created but unsaved language as @language" do
         post :create, {:language => invalid_attributes}, valid_session
         expect(assigns(:language)).to be_a_new(Language)
       end
@@ -103,7 +103,7 @@ RSpec.describe LanguagesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        skip("Add index hash of attributes valid for your model")
       }
 
       it "updates the requested language" do

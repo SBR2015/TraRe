@@ -1,69 +1,54 @@
+<% user = params[:user_username]  %>
+<% resume = @original_resumes.first %>
 <p class="bg-info">
-  <h2 class='text-center'>Your Resume and Translations</h2>
+  <h2 class='text-center'><%= user %>'s Resume and Translations</h2>
 </p>
 
-<table class="table resume-table">
-  <% resume = @original_resumes.first %>
-  <thead>
-    <tr>
-      <th class="col-md-8 resume">Your Resume</th>
-      <th class="col-md-4">Info</th>
-      <!-- <th>Owner</th>
-      <th>Translator</th>
-      <th>Language</th>
-      <th colspan="2"></th> -->
-    </tr>
-  </thead>
-
-  <tbody>
-      <tr>
-        <% if resume.present? %>
-          <td class="col-md-8 resume"><%= resume.sentence %></td>
-          <td class="col-md-4 info">
-            <ul>
-              <li>owner: <%= resume.owner.username %></li>
-              <li>lang: <%= resume.written_language.code %></li>
-              <% if current_user.id == resume.owner_id %>
-                <li><%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %></li>
-                <li><%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></li>
-              <% end %>
-            </ul>
-          </td>
-        <% elsif current_user.username == params[:user_username] %>
-          <td class="col-md-8"><%= link_to 'New Resume', new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %></td>
+<div class = "container">
+  <div class = "row form-resume">
+    <% if resume.present? %>
+        <div class = "resume-title">
+          lang: <%= resume.written_language.code %>
+        </div>
+        <div class = "resume-content">
+          <%= simple_format(h(resume.sentence)) %>
+        </div>
+        <% if current_user.id == resume.owner_id %>
+            <%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
+            <%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
         <% end %>
-      </tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th class="col-md-8 resume">Your Translations</th>
-        <th class="col-md-4">Info</th>
-        <!-- <th>Owner</th>
-        <th>Translator</th>
-        <th>Language</th>
-        <th colspan="2"></th> -->
-      </tr>
-    </thead>
-    <% @translated_resumes.each do |resume| %>
-      <tr>
-        <td class="col-md-8 resume"><%= resume.sentence %></td>
-        <td class="col-md-4 info">
-          <ul>
-            <li>owner: <%= resume.owner.username %></li>
-            <li>lang: <%= resume.written_language.code %></li>
-            <% if current_user.id == resume.translator_id or current_user.id == resume.owner_id %>
-              <li><%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %></li>
-              <li><%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></li>
-            <% end %>
-          </ul>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<!-- Link to create translation resumes in Other User's Resume -->
+        <% unless current_user.username == params[:user_username] || resume.blank? %>
+            <%= link_to 'New Translation', new_user_resume_path, class: 'btn btn-default btn-sm' %>
+        <% end %>
+
+
+    <% elsif current_user.username == params[:user_username] %>
+        <%= link_to 'New Resume', new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %>
+    <% end %>
+  </div>
+
+  <% @translated_resumes.each do |resume| %>
+      <div class = "row form-resume">
+        <% if resume.present? %>
+            <div class = "resume-title">
+              Translator: <%= link_to resume.translator.username, user_resumes_url(user_username: resume.translator.username) %> lang: <%= resume.written_language.code %>
+            </div>
+            <div class = "resume-content">
+              <%= simple_format(h(resume.sentence)) %>
+            </div>
+            <% if current_user.id == resume.owner_id || current_user.id == resume.translator_id %>
+                <%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
+                <%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+        <% end %>
+
+
+      </div>
+  <% end %>
+
+
+</div>
+        <!-- Link to create translation resumes in Other User's Resume -->
 <%# if current_user.username != params[:user_username] && resume.present? %>
-<% unless current_user.username == params[:user_username] || resume.blank? %>
-  <%= link_to 'new Translation Resume', new_user_resume_path %>
-<% end %>
+

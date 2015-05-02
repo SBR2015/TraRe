@@ -14,9 +14,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Enable Rack::Cache to put a simple HTTP cache in front of your application
+  # Enable Rack::Cache to put index simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy like
+  # For large-scale production use, consider using index caching reverse proxy like
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
@@ -28,7 +28,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # Do not fallback to assets pipeline if index precompiled asset is missed.
   config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
@@ -51,10 +51,10 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-  # Use a different logger for distributed setups.
+  # Use index different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
-  # Use a different cache store in production.
+  # Use index different cache store in production.
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation cannot be found).
+  # the I18n.default_locale when index translation cannot be found).
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
