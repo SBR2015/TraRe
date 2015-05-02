@@ -4,27 +4,13 @@
   The time is now: <%= Time.now %>
   </p>
 
-  <a href='/my'>My page</a>|
-  <a href='/user/<%= current_user.username %>'>My Resume</a><br />
+  <%= link_to "My Page", user_path(username: current_user.username) %>|
+  <%= link_to "My Resume", user_resumes_path(user_username: current_user.username) %>
   <%= form_tag('/', method:"get") do %>
-    <select name="language_id">
-      <% Language.all.each do |lang| %>
-        <% if lang[:id] == params[:language_id].to_i %>
-          <option value="<%= lang[:id] %>" selected><%= lang[:code] %></option>
-        <% else %>
-          <option value="<%= lang[:id] %>"><%= lang[:code] %></option>
-        <% end %>
-      <% end %>
-    </select>
+    <%= select(:language, :id, Language.all.map {|lang| [lang.code, lang.id]}, selected: @selected_lang) %>
     <%= submit_tag(['Search']) %>
   <% end %>
-  <% @resumes.each do | resume| %>
-    <% if @current_user.id != resume.owner_id %>
-      <% @users.each do | user| %>
-        <% if user.id == resume.owner_id %>
-          <a href='/user/<%= user.username %>'><%= user.username %></a><br />
-        <% end %>
-      <% end %>
-    <% end %>
+  <% @user_list.each do | user | %>
+    <%= link_to user.username, user_path(username: user.username) %>|
   <% end %>
 </article>
