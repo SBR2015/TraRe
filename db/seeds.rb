@@ -18,6 +18,18 @@ languages.each do |row|
   lang1.save!
 end
 
+resumes = CSV.readlines('db/data/resumes.csv')
+resumes.each do |row|
+  resume = Resume.new
+  resume.id = row[0]
+  resume.sentence = row[1]
+  resume.is_translation = row[2]
+  resume.owner_id = row[3]
+  resume.translator_id = row[4]
+  resume.language_id = row[5]
+  resume.save!
+end
+
 # resume1 = Resume.new
 # resume1.sentence = "こんちはー"
 # resume1.owner_id = 1
