@@ -10,6 +10,9 @@
 
       <p>
         <h4><%= @user.username %>'s Resumes</h4>
+        <% if @resumes.length == 0 %>
+            <%= link_to 'New Resume', new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %>
+        <% end %>
         <% @resumes.each do |t| %>
           <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
         <% end %>
@@ -34,9 +37,9 @@
       <p>
         account： <%= @user.username %>
       </p>
-      <p>
+      <!-- <p>
         name： <%= @user.realname %>
-      </p>
+      </p> -->
       <p>
         E-mail： <%= @user.email %>
       </p>
