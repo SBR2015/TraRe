@@ -3,8 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .form-resume {
-  margin: 0 auto;
+  margin: 20px auto;
   max-width: 640px;
   padding: 8px;
+
+
+  background-color: LightCyan;
+  -webkit-border-radius: 6px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 
+.resume-content {
+  padding-bottom: 20px;
+
+}
+
+.resume-title {
+
+}
