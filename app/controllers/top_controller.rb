@@ -3,7 +3,9 @@ class TopController < ApplicationController
 
   def index
     lang = params[:language].blank? ? [] : params[:language]
-    @resumes = lang.blank? ? Resume.all : Resume.where(language_id: lang[:id]).where.not(owner_id: current_user.id)
-    @selected_lang = lang[:id]
+    @resumes = lang.blank? ? 
+        Resume.where.not(owner_id: current_user.id) :
+        Resume.where(language_id: lang[:id]).where.not(owner_id: current_user.id)
+    @selected_lang = lang[:id].blank? ? '' : lang[:id]
   end
 end
