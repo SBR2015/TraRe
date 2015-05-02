@@ -10,7 +10,7 @@
     <%= select(:language, :id, Language.all.map {|lang| [lang.code, lang.id]}, selected: @selected_lang) %>
     <%= submit_tag(['Search']) %>
   <% end %>
-  <% @user_list.each do | user | %>
-    <%= link_to user.username, user_path(username: user.username) %>|
+  <% @resumes.each do | resume | %>
+    <%= link_to resume.owner.username, user_path(username: resume.owner.username) %><br />
   <% end %>
 </article>
