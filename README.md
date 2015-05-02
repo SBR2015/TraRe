@@ -10,17 +10,17 @@
 
 Team members
 ---------------
-[shinjukujohnny](https://github.com/shinjukujohnny):吉川久文(プロダクトオーナー)
+- [shinjukujohnny](https://github.com/shinjukujohnny):吉川久文(プロダクトオーナー)
 
-[Yusuke Ohashi](https://github.com/yuchan):大橋佑亮(Scrum master)
+- [Yusuke Ohashi](https://github.com/yuchan):大橋佑亮(Scrum master)
 
-[pyar6329](https://github.com/pyar6329):有馬司
+- [pyar6329](https://github.com/pyar6329):有馬司
 
-[a1447ll](https://github.com/a1447ll):LE BAO LINH
+- [a1447ll](https://github.com/a1447ll):LE BAO LINH
 
-[Olivia-tou](https://github.com/Olivia-tou):佟必超
+- [Olivia-tou](https://github.com/Olivia-tou):佟必超
 
-[Ounennhei](https://github.com/Ounennhei):王年平
+- [Ounennhei](https://github.com/Ounennhei):王年平
 
 App information
 ---------------
