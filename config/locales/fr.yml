@@ -10,7 +10,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -36,7 +36,7 @@ fr:
       short: "%e %b"
       long: "%e %B %Y"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -205,3 +205,23 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
+
+  hello: hello
+  Menu: Menu
+  Edit: Edit
+  SignUp: Sign Up
+  LogOut: 'Log Out'
+  LogIn: 'Log In'
+  Update: 'Update'
+  Search: Search
+
+  # ActiveRecord
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        password: Password
+        email: EMail
+        password_confirmation: Password Confirmation
+        current_password: Current Password
+        remember_me: Remember Me

@@ -10,7 +10,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -36,7 +36,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -193,7 +193,7 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
-  
+
   # My Custom Localization
   hello: 'こんにちは'
   Menu: 'メニュー'
@@ -201,7 +201,10 @@ ja:
   SignUp: 'サインアップ'
   LogOut: 'ログアウト'
   LogIn: 'ログイン'
+  Update: '更新'
+  Search: '検索'
 
+  # ActiveRecord
   activerecord:
     attributes:
       user:

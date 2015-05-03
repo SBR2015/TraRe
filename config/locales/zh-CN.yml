@@ -10,7 +10,7 @@ zh-CN:
     - 周五
     - 周六
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -36,7 +36,7 @@ zh-CN:
       long: "%Y年%b%d日"
       short: "%b%d日"
     month_names:
-    - 
+    -
     - 一月
     - 二月
     - 三月
@@ -202,3 +202,23 @@ zh-CN:
       long: "%Y年%b%d日 %H:%M"
       short: "%b%d日 %H:%M"
     pm: 下午
+
+  hello: hello
+  Menu: Menu
+  Edit: Edit
+  SignUp: Sign Up
+  LogOut: 'Log Out'
+  LogIn: 'Log In'
+  Update: 'Update'
+  Search: Search
+
+  # ActiveRecord
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        password: Password
+        email: EMail
+        password_confirmation: Password Confirmation
+        current_password: Current Password
+        remember_me: Remember Me

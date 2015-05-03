@@ -4,7 +4,7 @@
 
   <%= form_tag('/', method:"get") do %>
     <%= select(:language, :id, Language.all.map {|lang| [lang.code, lang.id]}, selected: @selected_lang) %>
-    <%= submit_tag 'Search' %>
+    <%= submit_tag t('Search') %>
   <% end %>
 
   <% @resumes.each do | resume | %>

@@ -10,7 +10,7 @@ vi:
     - Thứ sáu
     - Thứ bảy
     abbr_month_names:
-    - 
+    -
     - Tháng một
     - Tháng hai
     - Tháng ba
@@ -36,7 +36,7 @@ vi:
       long: "%d %B, %Y"
       short: "%d %b"
     month_names:
-    - 
+    -
     - Tháng một
     - Tháng hai
     - Tháng ba
@@ -197,3 +197,23 @@ vi:
       long: "%d %B, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: chiều
+
+  hello: hello
+  Menu: Menu
+  Edit: Edit
+  SignUp: Sign Up
+  LogOut: 'Log Out'
+  LogIn: 'Log In'
+  Update: 'Update'
+  Search: Search
+
+  # ActiveRecord
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        password: Password
+        email: EMail
+        password_confirmation: Password Confirmation
+        current_password: Current Password
+        remember_me: Remember Me

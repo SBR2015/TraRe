@@ -10,7 +10,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -36,7 +36,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -203,3 +203,24 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+
+  # My Custom Localization
+  hello: hello
+  Menu: Menu
+  Edit: Edit
+  SignUp: Sign Up
+  LogOut: 'Log Out'
+  LogIn: 'Log In'
+  Update: 'Update'
+  Search: Search
+
+# ActiveRecord
+activerecord:
+  attributes:
+    user:
+      username: Username
+      password: Password
+      email: EMail
+      password_confirmation: Password Confirmation
+      current_password: Current Password
+      remember_me: Remember Me
