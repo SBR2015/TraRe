@@ -211,6 +211,11 @@ zh-CN:
   LogIn: 'Log In'
   Update: 'Update'
   Search: Search
+  en: English
+  ja: Japanese
+  zh-CN: Chinese(Mandarin)
+  vi: Vietnamese
+  ko: Korean
 
   # ActiveRecord
   activerecord:

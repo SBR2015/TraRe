@@ -198,6 +198,11 @@ ko:
   LogIn: 'Log In'
   Update: 'Update'
   Search: Search
+  en: 영어
+  ja: 일본어
+  zh-CN: 중국어
+  vi: 베트남어
+  ko: 한국어
 
   # ActiveRecord
   activerecord:

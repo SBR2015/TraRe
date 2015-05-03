@@ -203,6 +203,11 @@ ja:
   LogIn: 'ログイン'
   Update: '更新'
   Search: '検索'
+  en: 英語
+  ja: 日本語
+  zh-CN: 中国語
+  vi: ベトナム語
+  ko: 韓国語
 
   # ActiveRecord
   activerecord:

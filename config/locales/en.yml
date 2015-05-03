@@ -213,14 +213,19 @@ en:
   LogIn: 'Log In'
   Update: 'Update'
   Search: Search
+  en: English
+  ja: Japanese
+  zh-CN: Chinese(Mandarin)
+  vi: Vietnamese
+  ko: Korean
 
-# ActiveRecord
-activerecord:
-  attributes:
-    user:
-      username: Username
-      password: Password
-      email: EMail
-      password_confirmation: Password Confirmation
-      current_password: Current Password
-      remember_me: Remember Me
+  # ActiveRecord
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        password: Password
+        email: EMail
+        password_confirmation: Password Confirmation
+        current_password: Current Password
+        remember_me: Remember Me

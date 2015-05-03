@@ -1,8 +1,9 @@
   <div class = "footer">
 		<ul>
-			<li><a href>About</a></li>
-			<li><a href>Help</a></li>
-			<li><a href>Privacy</a></li>
-			<li><a href>Contact</a></li>
+      <% I18n.available_locales.each do |locale| %>
+      <% next if locale == I18n.locale %>
+      <% localesym = locale.to_sym unless locale == :en %>
+      <li><%= link_to t(@localeinfo[locale]), url_for(locale: localesym) %></li>
+      <% end %>
 		</ul>
 	</div><!--footer-->
