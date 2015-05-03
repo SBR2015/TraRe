@@ -1,3 +1,18 @@
 // Place all the styles related to the Top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-search-form {
+  min-width: 320px;
+  padding: 12px;
+}
+
+.top-search-tags {
+  padding: 12px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
