@@ -32,7 +32,7 @@
       <div class = "row form-resume">
         <% if resume.present? %>
             <div class = "resume-title">
-              Translator: <%= link_to resume.translator.username, user_resumes_url(user_username: resume.translator.username) %> lang: <%= resume.written_language.code %>
+              <span class="glyphicon glyphicon-user" area-hidden="true"></span>Translator: <%= link_to resume.translator.username, user_resumes_url(user_username: resume.translator.username) %> lang: <%= resume.written_language.code %>
             </div>
             <div class = "resume-content">
               <%= simple_format(h(resume.sentence)) %>
@@ -51,4 +51,3 @@
 </div>
         <!-- Link to create translation resumes in Other User's Resume -->
 <%# if current_user.username != params[:user_username] && resume.present? %>
-

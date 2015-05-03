@@ -94,8 +94,9 @@ gem 'foreigner'
 
 # login settings
 gem 'devise'
+gem 'devise-i18n'
 gem 'omniauth'
 gem 'omniauth-facebook'
 #gem 'omniauth-github'
 
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.4'

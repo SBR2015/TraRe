@@ -3,10 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-
-
   # device controller calls below methods
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   protected
 
@@ -29,4 +28,9 @@ class ApplicationController < ActionController::Base
     '/'
   end
 
+  def set_locale
+    # set locale to browser session.
+    session[:locale] = params[:locale] if params[:locale]
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
 end
