@@ -1,21 +1,15 @@
 Rails.application.routes.draw do
-  resources :languages
-  # resources :resumes
-  resources :users, path: 'user', only: [:show], param: :username do
-    resources :resumes, except: [:show]#, only: [:new, :edit, :create, :update, :destroy, :index]
-
+  scope "(:locale)", locale: /vi|ja|zh-CN|ko/ do
+    resources :languages
+    resources :users, path: 'user', only: [:show], param: :username do
+      resources :resumes, except: [:show]
+    end
+    devise_for :users
+    root 'top#index'
   end
-
-  # match '/user/:user_username/resumes', to: 'resumes#userindex', via: 'get'#, as: 'user_resumes'
-
-  devise_for :users
-
-  root 'top#index'
 
   # get 'my/index'
   # match '/user/:username', to: 'my#index', as: 'user_root', via: 'get'
-
-  match '/api/myinfo', to: 'my#info', via: 'get'
 
   # get 'resumes/index'
   # match '/resume', to: 'resumes#index', via: 'get'

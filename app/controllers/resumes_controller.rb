@@ -7,10 +7,13 @@ class ResumesController < ApplicationController
   # GET /user/:user_username/resumes
   # GET /user/:user_username/resumes.json
   def index
-    all_resumes = Resume.where(owner_id: @user.id).order(:created_at)
-    @original_resumes = all_resumes.where(is_translation: false)
-    @translated_resumes = all_resumes.where(is_translation: true)
-
+    if @user.nil?
+      render text: 'the user doesn\'t exist.', status: 404 if @user.nil?
+    else
+      all_resumes = Resume.where(owner_id: @user.id).order(:created_at)
+      @original_resumes = all_resumes.where(is_translation: false)
+      @translated_resumes = all_resumes.where(is_translation: true)
+    end
   end
 
   # GET /user/:user_username/resumes/1

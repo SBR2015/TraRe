@@ -1,16 +1,14 @@
 <article>
-  <h1>Hello World and AIIT!!</h1>
-  <p>
-  The time is now: <%= Time.now %>
-  </p>
-
   <%= link_to "My Page", user_path(username: current_user.username) %>|
   <%= link_to "My Resume", user_resumes_path(user_username: current_user.username) %>
+
   <%= form_tag('/', method:"get") do %>
     <%= select(:language, :id, Language.all.map {|lang| [lang.code, lang.id]}, selected: @selected_lang) %>
-    <%= submit_tag(['Search']) %>
+    <%= submit_tag t('Search') %>
   <% end %>
+
   <% @resumes.each do | resume | %>
     <%= link_to resume.owner.username, user_path(username: resume.owner.username) %><br />
   <% end %>
+
 </article>

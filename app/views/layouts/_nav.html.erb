@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">TraRe</a>
+      <%= link_to 'TraRe', root_path, class: 'navbar-brand' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,15 +45,15 @@
         <li><index href="#">Link</index></li>
         -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= t('Menu') %><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
                 <li><%= link_to current_user.email, user_path(username: current_user.username) %></li>
-                <li><%= link_to 'Edit', edit_user_registration_path %></li>
-                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to t('Edit'), edit_user_registration_path %></li>
+                <li><%= link_to t('LogOut'), destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
-              <li><%= link_to 'Sign in', new_user_session_path %></li>
+              <li><%= link_to t('SignUp'), new_user_registration_path %></li>
+              <li><%= link_to t('LogIn'), new_user_session_path %></li>
             <% end %>
           </ul>
         </li>

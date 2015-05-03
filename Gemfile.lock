@@ -38,6 +38,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
+    autoprefixer-rails (5.1.11)
+      execjs
+      json
     backports (3.6.4)
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -46,6 +49,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -76,6 +82,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (0.12.0)
     diff-lcs (1.2.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -285,7 +292,7 @@ GEM
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
-    spring (1.3.4)
+    spring (1.3.5)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.0.3)
@@ -316,11 +323,6 @@ GEM
       typhoeus (~> 0.6, >= 0.6.8)
     turbolinks (2.5.3)
       coffee-rails
-    twitter-bootstrap-rails (3.2.0)
-      actionpack (~> 4.1)
-      execjs (~> 2.2)
-      rails (~> 4.1)
-      railties (~> 4.1)
     typhoeus (0.7.1)
       ethon (>= 0.7.1)
     tzinfo (1.2.2)
@@ -350,11 +352,13 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-sass (~> 3.3.4)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  devise-i18n
   factory_girl_rails
   foreigner
   guard-livereload
@@ -385,7 +389,6 @@ DEPENDENCIES
   therubyracer
   travis
   turbolinks
-  twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
