@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+    @current_locale = I18n.locale unless I18n.locale == :en
     @localeinfo = {}
     I18n.available_locales.each do |locale|
       @localeinfo[locale] = locale.to_s

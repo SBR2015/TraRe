@@ -1,14 +1,36 @@
-<article>
-  <%= link_to "My Page", user_path(username: current_user.username) %>|
-  <%= link_to "My Resume", user_resumes_path(user_username: current_user.username) %>
+<div class="container">
+  <div class="col-md-2">
+    <div class="list-group">
+    <%= link_to "My Page", user_path(username: current_user.username), class: 'list-group-item' %>
+    <%= link_to "My Resume", user_resumes_path(user_username: current_user.username) , class: 'list-group-item' %>
+  </div>
+  </div>
 
-  <%= form_tag('/', method:"get") do %>
-    <%= select(:language, :id, Language.all.map {|lang| [lang.code, lang.id]}, selected: @selected_lang) %>
-    <%= submit_tag t('Search') %>
-  <% end %>
-
-  <% @resumes.each do | resume | %>
-    <%= link_to resume.owner.username, user_path(username: resume.owner.username) %><br />
-  <% end %>
-
-</article>
+  <div class="col-md-10">
+    <div class="top-search-result list-group">
+        <% if @resumes.length == 0 %>
+          <span class="list-group-item list-group-item-warning"><%= t('No_Users_listed') %></span>
+        <% end %>
+        <% @resumes.each do | resume | %>
+          <%= link_to user_path(username: resume.owner.username), class: 'list-group-item' do %>
+            <h4 class="list-group-item-heading">
+              <%= resume.owner.username %>
+            </h4>
+            <p class="list-group-item-text truncate">
+              <%= resume.sentence %>
+            </p>
+          <% end %>
+        <% end %>
+    </div>
+    <div class="top-search-form">
+    <%= form_tag(url_for(locale: @current_locale), method: "get") do %>
+      <div class="form-group">
+        <%= select_tag "language", options_from_collection_for_select(Language.all, "id", "code", @selected_lang), class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= submit_tag t('Search'), class: 'btn btn-info' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
