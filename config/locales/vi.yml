@@ -198,27 +198,27 @@ vi:
       short: "%d %b %H:%M"
     pm: chiều
 
-  hello: hello
-  Menu: Menu
-  Edit: Edit
-  SignUp: Sign Up
-  LogOut: 'Log Out'
-  LogIn: 'Log In'
-  Update: 'Update'
-  Search: Search
-  en: English
-  ja: Japanese
-  zh-CN: Chinese(Mandarin)
-  vi: Vietnamese
-  ko: Korean
+  hello: xin chào
+  Menu: Danh mục
+  Edit: Chỉnh sửa
+  SignUp: Đăng ký
+  LogOut: Đăng xuất
+  LogIn: Đăng nhập
+  Update: Cập nhật
+  Search: Tìm kiếm
+  en: Tiếng Anh
+  ja: Tiếng Nhật
+  zh-CN: Tiếng Trung
+  vi: Tiếng Việt
+  ko:  Tiếng Hàn
 
   # ActiveRecord
   activerecord:
     attributes:
       user:
-        username: Username
-        password: Password
-        email: EMail
-        password_confirmation: Password Confirmation
-        current_password: Current Password
-        remember_me: Remember Me
+        username: Tên đăng nhập 
+        password: Mật khẩu
+        email: E-mail
+        password_confirmation: Xác nhận mật khẩu
+        current_password: Mậu khẩu hiện tại
+        remember_me: Ghi nhớ
