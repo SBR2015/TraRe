@@ -22,11 +22,24 @@
             <%= link_to t('Go to Resume Page'), user_resumes_url(user_username: @user.username), class: 'btn btn-info' %>
         <% end %>
         </h4>
+
+        <h4>Translations: <span class="badge"><%= @theirtranslateds.length %></span></h4>
+        <% @theirtranslateds.each do |t| %>
+          <li>
+            lang: <%= t.written_language.code %> by
+            <%= link_to t.translator.username || 'nowhere man', user_resumes_url(user_username: t.translator.username) %>
+          </li>
+        <% end %>
       </p>
+
+      <br />
       <p>
         <h4><%= t :translations %> <span class="badge"><%= @theirtranslations.length %></span></h4>
         <% @theirtranslations.each do |t| %>
-          <li><%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %></li>
+          <li>
+            <%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %>
+            lang: <%= t.written_language.code %>
+          </li>
         <% end %>
       </p>
       <p>
