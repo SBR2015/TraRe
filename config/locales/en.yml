@@ -204,15 +204,25 @@ en:
       short: "%d %b %H:%M"
     pm: pm
 
-  # My Custom Localization
+  # General Localization
   hello: hello
   Menu: Menu
+  translations: translations
+  edit_resume: Edit Resume
+  users_resume: "%{user}'s resume"
+  users_translators: "%{user}'s translators"
+  users_translations: "%{user}'s translations"
+
+  #buttons localization(don't forget!)
+  Create: 'Create'
   Edit: Edit
+  Update: 'Update'
+  Search: Search
   SignUp: Sign Up
   LogOut: 'Log Out'
   LogIn: 'Log In'
-  Update: 'Update'
-  Search: Search
+
+  # languages
   en: English
   ja: Japanese
   zh-CN: Chinese(Mandarin)

@@ -203,14 +203,24 @@ zh-CN:
       short: "%b%d日 %H:%M"
     pm: 下午
 
+  #General
   hello: hello
   Menu: Menu
+  edit_resume: Edit Resume
+  users_resume: "%{user}'s Resume"
+  users_translators: "%{user}'s Translators"
+  users_translations: "%{user}'s Translations"
+
+  #Buttons
   Edit: Edit
   SignUp: Sign Up
   LogOut: 'Log Out'
   LogIn: 'Log In'
+  Create: Create
   Update: 'Update'
   Search: Search
+
+  #Languages
   en: English
   ja: Japanese
   zh-CN: Chinese(Mandarin)

@@ -14,17 +14,17 @@
           <%= simple_format(h(resume.sentence)) %>
         </div>
         <% if current_user.id == resume.owner_id %>
-            <%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
-            <%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to t('Edit'), edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
+            <%= link_to t('Delete'), user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
         <% end %>
 
         <% unless current_user.username == params[:user_username] || resume.blank? %>
-            <%= link_to 'New Translation', new_user_resume_path, class: 'btn btn-default btn-sm' %>
+            <%= link_to t('New Translation'), new_user_resume_path, class: 'btn btn-default btn-sm' %>
         <% end %>
 
 
     <% elsif current_user.username == params[:user_username] %>
-        <%= link_to 'New Resume', new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %>
+        <%= link_to t('New Resume'), new_user_resume_path(user_username:current_user.username), class: 'btn btn-default' %>
     <% end %>
   </div>
 
@@ -38,16 +38,14 @@
               <%= simple_format(h(resume.sentence)) %>
             </div>
             <% if current_user.id == resume.owner_id || current_user.id == resume.translator_id %>
-                <%= link_to 'Edit', edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
-                <%= link_to 'Delete', user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to t('Edit'), edit_user_resume_path(id: resume.id), class: 'btn btn-default btn-sm' %>
+                <%= link_to t('Delete'), user_resume_path(id: resume.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
             <% end %>
         <% end %>
-
-
       </div>
   <% end %>
 
 
 </div>
-        <!-- Link to create translation resumes in Other User's Resume -->
+<!-- Link to create translation resumes in Other User's Resume -->
 <%# if current_user.username != params[:user_username] && resume.present? %>

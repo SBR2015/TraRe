@@ -40,9 +40,9 @@
   </div>
   <div class="actions">
     <% if current_page?(action: 'new') %>
-      <%= f.submit 'create', class: 'btn btn-primary' %>
+      <%= f.submit t('Create'), class: 'btn btn-primary' %>
     <% else %>
-      <%= f.submit 'update', class: 'btn btn-primary' %>
+      <%= f.submit t('Update'), class: 'btn btn-primary' %>
     <% end %>
   </div>
 <% end %>

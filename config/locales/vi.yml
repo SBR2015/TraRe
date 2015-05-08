@@ -198,14 +198,25 @@ vi:
       short: "%d %b %H:%M"
     pm: chiều
 
+  #General
   hello: xin chào
   Menu: Danh mục
+  edit_resume: Edit Resume
+  translations: Translations
+  users_resume: "%{user}'s Resume"
+  users_translators: "%{user}'s Translators"
+  users_translations: "%{user}'s Translations"
+
+  #buttons
   Edit: Chỉnh sửa
   SignUp: Đăng ký
   LogOut: Đăng xuất
   LogIn: Đăng nhập
+  Create: Create
   Update: Cập nhật
   Search: Tìm kiếm
+
+  #languages
   en: Tiếng Anh
   ja: Tiếng Nhật
   zh-CN: Tiếng Trung
@@ -216,7 +227,7 @@ vi:
   activerecord:
     attributes:
       user:
-        username: Tên đăng nhập 
+        username: Tên đăng nhập
         password: Mật khẩu
         email: E-mail
         password_confirmation: Xác nhận mật khẩu

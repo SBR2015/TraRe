@@ -190,19 +190,29 @@ ko:
       short: "%y/%m/%d %H:%M"
     pm: 오후
 
+  #General
   hello: hello
   Menu: Menu
+  edit_resume: Edit Resume
+  users_resume: "%{user}'s Resume"
+  users_translators: "%{user}'s Translators"
+  users_translations: "%{user}'s Translations"
+
+  #Buttons
   Edit: Edit
   SignUp: Sign Up
   LogOut: 'Log Out'
   LogIn: 'Log In'
   Update: 'Update'
   Search: Search
+
+  #Languages
   en: 영어
   ja: 일본어
   zh-CN: 중국어
   vi: 베트남어
   ko: 한국어
+  Create: Create
 
   # ActiveRecord
   activerecord:

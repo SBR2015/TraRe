@@ -194,15 +194,30 @@ ja:
       short: "%y/%m/%d %H:%M"
     pm: 午後
 
-  # My Custom Localization
+  # General Localization
   hello: 'こんにちは'
   Menu: 'メニュー'
+  New Translation: '翻訳を投稿'
+  translations: '翻訳'
+  New Resume: 'レジュメを投稿'
+  Resume: レジュメ
+  Data: データ
+  edit_resume: レジュメ編集
+  users_resume: "%{user}のレジュメ"
+  users_translators: "%{user}の翻訳者"
+  users_translations: "%{user}の翻訳"
+
+  # Buttons
   Edit: '編集'
+  Delete: '削除'
   SignUp: 'サインアップ'
   LogOut: 'ログアウト'
   LogIn: 'ログイン'
+  Create: '作成'
   Update: '更新'
   Search: '検索'
+
+  # Languages
   en: 英語
   ja: 日本語
   zh-CN: 中国語
@@ -219,3 +234,7 @@ ja:
         password_confirmation: パスワード 確認
         current_password: 現在のパスワード
         remember_me: ログインを記憶
+      resume:
+        sentence: 本文
+      language:
+        code: 言語コード
