@@ -206,7 +206,7 @@ vi:
   users_resume: "Resume của %{user}"
   users_translations: "Bản dịch của %{user}"
   Account: Tài khoản
-  Language: Ngôn ngữ 
+  Language: Ngôn ngữ
   Translator: Người dịch
 
   #buttons
@@ -222,11 +222,12 @@ vi:
   "New Resume": Tạo Resume mới
 
   #languages
-  en: Tiếng Anh
-  ja: Tiếng Nhật
-  zh-CN: Tiếng Trung
+  en:  English
+  ja: 日本語
+  zh-CN: 简体中文
+  zh: 中文
   vi: Tiếng Việt
-  ko:  Tiếng Hàn
+  ko:  한국어
 
   # ActiveRecord
   activerecord:
