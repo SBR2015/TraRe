@@ -26,7 +26,7 @@
         <h4><%= t('Translations') %> <span class="badge"><%= @theirtranslateds.length %></span></h4>
         <% @theirtranslateds.each do |t| %>
           <li>
-            lang: <%= t.written_language.code %> by
+            <%= t('Language') %>: <%= t.written_language.code %> - <%= t('Translator') %>:
             <%= link_to t.translator.username || 'nowhere man', user_resumes_url(user_username: t.translator.username) %>
           </li>
         <% end %>
@@ -38,7 +38,7 @@
         <% @theirtranslations.each do |t| %>
           <li>
             <%= link_to t.owner.username || 'nowhere man', user_resumes_url(user_username: t.owner.username) %>
-            lang: <%= t.written_language.code %>
+            - <%= t('Language') %>: <%= t.written_language.code %>
           </li>
         <% end %>
       </p>
@@ -49,7 +49,7 @@
         <h2>Profile</h2>
       </div>
       <p>
-        account： <%= @user.username %>
+        <%= t('Account') %>： <%= @user.username %>
       </p>
       <p>
         E-mail： <%= @user.email %>
