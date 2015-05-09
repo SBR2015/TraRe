@@ -204,36 +204,62 @@ zh-CN:
     pm: 下午
 
   #General
-  hello: hello
-  Menu: Menu
-  edit_resume: Edit Resume
-  users_resume: "%{user}'s Resume"
-  users_translators: "%{user}'s Translators"
-  users_translations: "%{user}'s Translations"
+  hello: 你好
+  Menu: 菜单
+  edit_resume: 编辑简历
+  users_resume: "%{user}的简历"
+  users_translators: "%{user}的翻译者"
+  users_translations: "%{user}的翻译"
+  users_page: "%{user}的页面"
+  users_resume_translations: '%{user}的简历和翻译'
+  characters minimum: 位至少
+  Resume Data: 简历一览
+  Translations: 翻译
+  Profile: 用户信息
+  Account: 账户名
+  E-mail: 邮箱
+  No_Resume: 没有简历
+  Back: 返回
+  "leave blank if you don\'t want to change it": 如果你不想更改请留下空格
+  we need your current password to confirm your changes: 确认更改之前请输入当前密码
+
+  Unhappy?: 不开心？
+  New Translation: 新的翻译
+  My Page: 我的页面
+  My Resume: 我的简历
+  Language: 语言
+  Translator: 翻译者
+  No_Users_listed: 没有用户内容
+  User: 用户
+
 
   #Buttons
-  Edit: Edit
-  SignUp: Sign Up
-  LogOut: 'Log Out'
-  LogIn: 'Log In'
-  Create: Create
-  Update: 'Update'
-  Search: Search
+  Edit: 编辑
+  SignUp: 注册
+  LogOut: '登出'
+  LogIn: '登入'
+  Create: 创建
+  Update: '更新'
+  Search: 搜索
+  Delete: 删除
+  New Resume: 新的简历
+  Go to Resume Page: 进入简历页面
 
-  #Languages
-  en: English
-  ja: Japanese
-  zh-CN: Chinese(Mandarin)
-  vi: Vietnamese
-  ko: Korean
+  #languages
+  en:  English
+  ja: 日本語
+  zh-CN: 简体中文
+  zh: 中文
+  vi: Tiếng Việt
+  ko:  한국어
 
   # ActiveRecord
   activerecord:
     attributes:
       user:
-        username: Username
-        password: Password
-        email: EMail
-        password_confirmation: Password Confirmation
-        current_password: Current Password
-        remember_me: Remember Me
+        username: 用户名
+        password: 密码
+        email: 邮箱地址
+        password_confirmation: 确认密码
+        current_password: 当前密码
+        remember_me: 请记住我

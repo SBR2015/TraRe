@@ -2,12 +2,12 @@
   <div class="row-fluid">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h1 class="panel-title"><%= @user.username %>'s Page</h1>
+        <h1 class="panel-title"><%= t :users_page, user: @user.username %></h1>
       </div>
     </div>
     <div class="left-col col-md-7">
       <div class="left-title">
-        <h2>Resume Data</h2>
+        <h2><%= t('Resume Data') %></h2>
       </div>
       <p>
         <h4><%= t :users_resume, user: @user.username %>
@@ -46,13 +46,13 @@
     </div>
     <div class="right-col col-md-4 col-md-offset-1">
       <div class="right-title">
-        <h2>Profile</h2>
+        <h2><%= t('Profile') %></h2>
       </div>
       <p>
         <%= t('Account') %>： <%= @user.username %>
       </p>
       <p>
-        E-mail： <%= @user.email %>
+        <%= t('E-mail') %>： <%= @user.email %>
       </p>
     </div>
   </div>

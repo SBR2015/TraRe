@@ -1,7 +1,7 @@
 <% user = params[:user_username]  %>
 <% resume = @original_resumes.first %>
 <p class="bg-info">
-  <h2 class='text-center'><%= user %>'s Resume and Translations</h2>
+  <h2 class='text-center'><%= t :users_resume_translations, user: @user.username %></h2>
 </p>
 
 <div class = "container">
