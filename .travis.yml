@@ -22,3 +22,6 @@ deploy:
     repo: Olivia-tou/TraRe
   run:
     - "rake db:migrate"
+
+notifications:
+  slack: chubachi-pt-2015:MylvLlE5HOwVIZKXYYcrSjAn
