@@ -201,27 +201,33 @@ vi:
   #General
   hello: xin chào
   Menu: Danh mục
-  edit_resume: Edit Resume
-  translations: Translations
-  users_resume: "%{user}'s Resume"
-  users_translators: "%{user}'s Translators"
-  users_translations: "%{user}'s Translations"
+  edit_resume:  Resume
+  translations: Bản dịch
+  users_resume: "Resume của %{user}"
+  users_translations: "Bản dịch của %{user}"
+  Account: Tài khoản
+  Language: Ngôn ngữ
+  Translator: Người dịch
 
   #buttons
-  Edit: Chỉnh sửa
+  Edit: Sửa
+  Delete: Xoá
   SignUp: Đăng ký
   LogOut: Đăng xuất
   LogIn: Đăng nhập
-  Create: Create
+  Create: Tạo mới
   Update: Cập nhật
   Search: Tìm kiếm
+  "Go to Resume Page": Chuyển đến trang Resume
+  "New Resume": Tạo Resume mới
 
   #languages
-  en: Tiếng Anh
-  ja: Tiếng Nhật
-  zh-CN: Tiếng Trung
+  en:  English
+  ja: 日本語
+  zh-CN: 简体中文
+  zh: 中文
   vi: Tiếng Việt
-  ko:  Tiếng Hàn
+  ko:  한국어
 
   # ActiveRecord
   activerecord:
