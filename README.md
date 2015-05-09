@@ -1,4 +1,5 @@
-# TraRe
+TraRe
+================
 
 [![Build Status](https://travis-ci.org/Olivia-tou/TraRe.svg?branch=master)](https://travis-ci.org/Olivia-tou/TraRe)
 [![Code Climate](https://codeclimate.com/github/Olivia-tou/TraRe/badges/gpa.svg)](https://codeclimate.com/github/Olivia-tou/TraRe)
