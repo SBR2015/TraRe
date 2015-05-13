@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'testresume/index'
+
   scope "(:locale)", locale: /vi|ja|zh-CN|ko/ do
     resources :languages
     resources :users, path: 'user', only: [:show], param: :username do
