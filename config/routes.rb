@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'testresume/index'
+  match '/test/user/:username/resumes', to: 'testresume#index', via: 'get'
 
   scope "(:locale)", locale: /vi|ja|zh-CN|ko/ do
     resources :languages
