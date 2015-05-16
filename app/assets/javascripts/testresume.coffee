@@ -3,13 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 class Index
-  APPURL = "http://localhost:3000"
+  APPURL = "http://127.0.0.1:3000"
   username = "pyar6329"
 
   $ ->
-#  jQuery ->
-#    $.get(APPURL + "/user/" + username + '/resumes.json', null, (data)=>
-    $.get('http://127.0.0.1:3000/user/pyar6329/resumes.json', null, (data)=>
+    $.get(APPURL + "/user/" + username + '/resumes.json', null, (data)=>
 
       resumeinfo = $("#resumeinfo")
       console.log(data)
