@@ -15,10 +15,11 @@ script:
 
 deploy:
   provider: heroku
-  api_key: #d2e20278-8dee-46f1-8eb1-4ee708916afe
-    secure: nYF3j2ihy6CKYnPgzW/6Dniu2kqX+/J7XTFXkyA6EmPNHTNKbJ/kU6+qdZ2AqqBFlpTkopCpsJ5+K58g38EG2vq9sCzKpsmv9i+mhixIq+K3Sqk45DWaSN4EWl+oRQKPM8K0xp69yRrjHE6u+2yUFa1nZNdeW4CxlMyNgCbSbt4=
-  app: tranquil-hollows-4999
+  api_key:
+    secure: OrZrWMEgSjABISW2zoJEcC65F0wvEfvjv/cfT/9rEcVSnvbn8rx2ap1iU74Wg3s7X1CjBckhH9uhYj2ZwOTqmhN/P8m9Oc+xQGjBeqar4xzZNILiyGWwl6VS/1AHoKk5D/k2E8fKg0uTrePxmIilravCpe8pwT1eud5Fp2cc3wM=
+  app: shrouded-basin-1455
   on:
+    branch: master
     repo: Olivia-tou/TraRe
   run:
     - "rake db:migrate"
