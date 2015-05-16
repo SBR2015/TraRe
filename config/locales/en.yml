@@ -223,11 +223,12 @@ en:
   LogIn: 'Log In'
 
   # languages
-  en: English
-  ja: Japanese
-  zh-CN: Chinese(Mandarin)
-  vi: Vietnamese
-  ko: Korean
+  en:  English
+  ja: 日本語
+  zh-CN: 简体中文
+  zh: 中文
+  vi: Tiếng Việt
+  ko:  한국어
 
   # ActiveRecord
   activerecord:

@@ -218,11 +218,12 @@ ja:
   Search: '検索'
 
   # Languages
-  en: 英語
+  en:  English
   ja: 日本語
-  zh-CN: 中国語
-  vi: ベトナム語
-  ko: 韓国語
+  zh-CN: 简体中文
+  zh: 中文
+  vi: Tiếng Việt
+  ko:  한국어
 
   # ActiveRecord
   activerecord:
@@ -236,5 +237,6 @@ ja:
         remember_me: ログインを記憶
       resume:
         sentence: 本文
+        language_id: 言語
       language:
         code: 言語コード

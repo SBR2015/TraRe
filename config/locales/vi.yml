@@ -201,25 +201,44 @@ vi:
   #General
   hello: xin chào
   Menu: Danh mục
-  edit_resume:  Resume
-  translations: Bản dịch
+  edit_resume: sửa resume
   users_resume: "Resume của %{user}"
+  users_translators: "Người dịch cho %{user}"
   users_translations: "Bản dịch của %{user}"
+  users_page: "Tran của %{user}"
+  users_resume_translations: '%{user}的简历和翻译'
+  characters minimum: kí tự tối thiểu
+  Resume Data: Thông tin resume
+  Translations: Bản dịch
+  Profile: Thông tin cá nhân
   Account: Tài khoản
+  E-mail: E-mail
+  No_Resume: Không có resume nào
+  Back: Quay lại
+  "leave blank if you don\'t want to change it": bỏ trống nếu bạn không muốn thay đổi
+  we need your current password to confirm your changes: nhập mật khẩu để xác nhận thay đổi
+
+  Unhappy?: Không đồng ý？
+  New Translation: Tạo resume mới
+  My Page: Trang của tôi
+  My Resume: Resume của tôi
   Language: Ngôn ngữ
   Translator: Người dịch
+  No_Users_listed: Không có thông tin người dùng
+  User: Người dùng
 
-  #buttons
+
+  #Buttons
   Edit: Sửa
-  Delete: Xoá
   SignUp: Đăng ký
   LogOut: Đăng xuất
   LogIn: Đăng nhập
-  Create: Tạo mới
+  Create: Tạo
   Update: Cập nhật
   Search: Tìm kiếm
-  "Go to Resume Page": Chuyển đến trang Resume
-  "New Resume": Tạo Resume mới
+  Delete: Xoá
+  New Resume: Tạo resume mới
+  Go to Resume Page: Xem resume
 
   #languages
   en:  English
@@ -233,9 +252,9 @@ vi:
   activerecord:
     attributes:
       user:
-        username: Tên đăng nhập
+        username: Tên
         password: Mật khẩu
         email: E-mail
         password_confirmation: Xác nhận mật khẩu
-        current_password: Mậu khẩu hiện tại
+        current_password: Mật khẩu hiện tại
         remember_me: Ghi nhớ
