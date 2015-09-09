@@ -26,5 +26,5 @@ Team members
 App information
 ---------------
 - [Travis CI](https://travis-ci.org/Olivia-tou/TraRe)
-- [Heroku](https://tranquil-hollows-4999.herokuapp.com/)
+- [Heroku](https://tranquil-hollows-4999.herokuapp.com/users/sign_in)
 - [産業技術大学院大学](http://aiit.ac.jp/)
